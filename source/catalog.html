@@ -9,7 +9,7 @@
     <header class="main-header">
       <a class="main-header__logo">
         <img
-          src="images/logo-sedona.svg"
+          src="img/logo-sedona.svg"
           width="185"
           height="96"
           alt="Город «Седона»."
@@ -20,6 +20,7 @@
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="main-nav__wrapper">
+
           <ul class="main-nav__list site-list">
             <li class="site-list__item site-list__item--active">
               <a href="index.html">Главная</a>
@@ -28,6 +29,7 @@
               <a href="catalog.html">Фото и видео</a>
             </li>
           </ul>
+
           <ul class="main-nav__list user-list">
             <li class="user-list__item">
               <a href="form.html">Форма отзыва</a>
@@ -36,12 +38,168 @@
               <a href="#">HTML Academy</a>
             </li>
           </ul>
+
         </div>
       </nav>
     </header>
 
-    <main></main>
-    <footer></footer>
+    <main class="main-container">
+      <h1 class="visually-hidden">Седона - страница фото и видео материалов</h1>
+      <section class="main-picture">
+        <div class="main-picture__wrapper">
+          <img src="img/text-sedona.svg" width="157" height="78" alt="Sedona" />
+        </div>
+      </section>
 
+      <section class="catalog-intro">
+        <div class="catalog-intro__wrapper">
+          <header class="catalog-intro__header">
+            <h2 class="catalog-intro__title">Фото и видео</h2>
+            <p class="catalog-intro__text">
+              Не можете решиться на путешествие из-за курса? Фотографии помогут
+              вам забыть о политике и экономике.
+            </p>
+          </header>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <h2 class="visually-hidden">
+          Фотоматериалы достопримечательностей Седоны
+        </h2>
+        <ul class="catalog__list">
+          <li class="catalog__item catalog__item--img">
+            <a class="catalog__link" href="#">
+              <img
+                src="img/catalog/photo-1-mobile.jpg"
+                width="280"
+                height="280"
+                alt="Дорога в закат с силуэтом гор вдали."
+              />
+              <h3 class="catalog__item-title">Народные просторы</h3>
+            </a>
+            <p class="catalog__item-text">Автор фото: Борис</p>
+            <button class="catalog__like" type="button">
+              <span class="visually-hidden">Понравилось</span>
+            </button>
+            <span class="catalog__like-count">1350</span>
+          </li>
+          <li class="catalog__item catalog__item--img">
+            <a class="catalog__link" href="#">
+              <img
+                src="img/catalog/photo-2-mobile.jpg"
+                width="280"
+                height="280"
+                alt="Растение на фоне каньона."
+              />
+              <h3 class="catalog__item-title">Местная растительность</h3>
+            </a>
+            <p class="catalog__item-text">Автор фото: Сергей</p>
+            <button class="catalog__like" type="button">
+              <span class="visually-hidden">Понравилось</span>
+            </button>
+            <span class="catalog__like-count">143</span>
+          </li>
+          <li class="catalog__item catalog__item--img">
+            <a class="catalog__link" href="#">
+              <img
+                src="img/catalog/photo-3-mobile.jpg"
+                width="280"
+                height="280"
+                alt="Горный серпантин в окружении хвойных деревьев."
+              />
+              <h3 class="catalog__item-title">Дорога на север</h3>
+            </a>
+            <p class="catalog__item-text">Автор фото: Петр</p>
+            <button class="catalog__like" type="button">
+              <span class="visually-hidden">Понравилось</span>
+            </button>
+            <span class="catalog__like-count">96</span>
+          </li>
+          <li class="catalog__item catalog__item--img">
+            <a class="catalog__link" href="#">
+              <img
+                src="img/catalog/photo-4-mobile.jpg"
+                width="280"
+                height="280"
+                alt="Каньон на фоне гор."
+              />
+              <h3 class="catalog__item-title">Мост дьявола</h3>
+            </a>
+            <p class="catalog__item-text">Автор фото: Антон</p>
+            <button class="catalog__like" type="button">
+              <span class="visually-hidden">Понравилось</span>
+            </button>
+            <span class="catalog__like-count">254</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="catalog-video">
+        <div class="catalog-video__wrapper">
+          <header class="catalog-video__header">
+            <h2 class="catalog-video__title">Все еще сомневаетесь?</h2>
+            <p class="catalog-video__text">
+              Смотрите видеопрезентацию и скорее за билетами, пока они не
+              подорожали в очередной раз!
+            </p>
+            <img
+              src="img/catalog/video-mobile.jpg"
+              width="280"
+              height="177"
+              alt="Видео проезда на транспорте через каньон Мост дьявола к городку Седона"
+            />
+          </header>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="main-footer__wrapper">
+        <h2 class="visually-hidden">Подвал страницы</h2>
+        <div class="main-footer__hashtag hashtag">
+          <h3 class="visually-hidden">Хэштег</h3>
+          &#35;visitsedona
+        </div>
+
+        <div class="main-footer__social social">
+          <h3 class="visually-hidden">Социальные сети</h3>
+          <ul class="social__list">
+            <li class="social__item">
+              <a
+                class="social__link social__link--vkontakte"
+                href="https://vk.com/htmlacademy"
+              >
+                <span class="visually-hidden">Мы в ВКонтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                class="social__link social__link--telegram"
+                href="https://t.me/htmlacademy"
+              >
+                <span class="visually-hidden">Мы в Телеграмме</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a
+                class="social__link social__link--youtube"
+                href="https://www.youtube.com/user/htmlacademyru"
+              >
+                <span class="visually-hidden">Мы в Ютубе</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="main-footer__copyright copyright">
+          <h3 class="visually-hidden">Разработчик сайта</h3>
+          <b class="copyright__text">Разработано:</b>
+          <a class="copyright__link" href="https://htmlacademy.ru/">
+            <span class="visually-hidden">HTML Academy</span>
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
