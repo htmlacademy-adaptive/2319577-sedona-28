@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsansbold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans.woff") format("woff");
+  font-display: swap;
+}
+
+html {
+  height: 100%;
+}
+
+.page__body {
+  width: 320px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+  background-color: #eeeeee;
+  text-align: center;
+  flex-grow: 1;
+  // Размер блока на всю страницу
+  min-height: 100%;
+}
