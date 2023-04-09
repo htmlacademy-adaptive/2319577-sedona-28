@@ -9,34 +9,32 @@
 
 <body class="page__body">
   <header class="main-header">
-    <a class="main-header__logo">
-      <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
-    </a>
     <nav class="main-nav">
-      <button class="main-nav__toggle" type="button">
+      <!-- <button class="main-nav__toggle" type="button">
         <span class="visually-hidden">Открыть меню</span>
-      </button>
+      </button> -->
       <div class="main-nav__wrapper">
-
         <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a href="index.html">Главная</a>
+          <li class="site-list__item site-list__item--active">
+            <a class="site-list__text" href="index.html">Главная</a>
           </li>
           <li class="site-list__item">
-            <a href="catalog.html">Фото и видео</a>
+            <a class="site-list__text" href="catalog.html">Фото и видео</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__text" href="form.html">Форма отзыва</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__text" href="#">HTML Academy</a>
           </li>
         </ul>
-
-        <ul class="main-nav__list user-list">
-          <li class="user-list__item user-list__item--active">
-            <a href="form.html">Форма отзыва</a>
-          </li>
-          <li class="user-list__item">
-            <a href="#">HTML Academy</a>
-          </li>
-        </ul>
-
       </div>
+
+      <a class="main-nav__logo">
+        <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
+      </a>
+
+      <div class="main-nav__wrapper"></div>
     </nav>
   </header>
 
@@ -167,12 +165,12 @@
   <footer class="main-footer">
     <div class="main-footer__wrapper">
       <h2 class="visually-hidden">Подвал страницы</h2>
-      <div class="main-footer__hashtag hashtag">
+      <section class="main-footer__hashtag">
         <h3 class="visually-hidden">Хэштег</h3>
         <span class="main-footer__hashtag-text">&#35;visitsedona</span>
-      </div>
+      </section>
 
-      <div class="main-footer__social social">
+      <section class="main-footer__social social">
         <h3 class="visually-hidden">Социальные сети</h3>
         <ul class="social__list">
           <li class="social__item">
@@ -191,15 +189,18 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
 
-      <div class="main-footer__copyright copyright">
+      <section class="main-footer__copyright copyright">
         <h3 class="visually-hidden">Разработчик сайта</h3>
-        <b class="copyright__text">Разработано:</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/">
-          <span class="visually-hidden">HTML Academy</span>
-        </a>
-      </div>
+        <div class="copyright__wrapper">
+          <p class="copyright__text">Разработано</p>
+          <a class="copyright__link" href="https://htmlacademy.ru/">
+            <span class="visually-hidden">HTML Academy</span>
+          </a>
+        </div>
+      </section>
+
     </div>
   </footer>
 </body>
