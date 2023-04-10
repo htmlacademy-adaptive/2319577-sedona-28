@@ -80,13 +80,19 @@
         <h3 class="form__legend">Контактная информация:</h3>
         <div class="form__field-wrapper">
           <label class="form__label" for="phone">Контактный телефон*:</label>
-          <input class="form__control" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
-            required>
+          <div class="form__input-wrapper">
+            <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
+              required>
+            <span class="form__control-icon form__control-icon--phone"></span>
+          </div>
         </div>
         <div class="form__field-wrapper">
           <label class="form__label" for="email">Электронная почта*:</label>
-          <input class="form__control" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
-            required>
+          <div class="form__input-wrapper">
+            <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
+              required>
+            <span class="form__control-icon form__control-icon--email"></span>
+          </div>
         </div>
       </fieldset>
 
@@ -154,11 +160,13 @@
       <fieldset class="form__content form__content--feedback">
         <h3 class="form__legend">Опишите свои эмоции:</h3>
         <label class="visually-hidden" for="feedback"></label>
-        <textarea id="feedback" name="feedback" placeholder="Опишите подробно все свои восторги"></textarea>
+        <textarea class="form__feedback" id="feedback" name="feedback" placeholder="Опишите подробно все свои восторги"></textarea>
       </fieldset>
 
-      <button class="form__submit" type="submit">Отправить отзыв</button>
-      <span class="form__text">* — обязательные поля</span>
+      <div class="form__submit-wrapper">
+        <button class="form__submit" type="submit">Отправить отзыв</button>
+        <p class="form__text">* — обязательные поля</p>
+      </div>
     </form>
   </main>
 
