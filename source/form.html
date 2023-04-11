@@ -4,47 +4,47 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="page__body">
   <header class="main-header">
-    <a class="main-header__logo">
-      <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
-    </a>
     <nav class="main-nav">
-      <button class="main-nav__toggle" type="button">
-        <span class="visually-hidden">Открыть меню</span>
-      </button>
       <div class="main-nav__wrapper">
-
         <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a href="index.html">Главная</a>
+          <li class="site-list__item site-list__item--active">
+            <a class="site-list__text" href="index.html">Главная</a>
           </li>
           <li class="site-list__item">
-            <a href="catalog.html">Фото и видео</a>
+            <a class="site-list__text" href="catalog.html">Фото и видео</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__text" href="form.html">Форма отзыва</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__text" href="#">HTML Academy</a>
           </li>
         </ul>
+      </div>
 
-        <ul class="main-nav__list user-list">
-          <li class="user-list__item user-list__item--active">
-            <a href="form.html">Форма отзыва</a>
-          </li>
-          <li class="user-list__item">
-            <a href="#">HTML Academy</a>
-          </li>
-        </ul>
+      <a class="main-nav__logo">
+        <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
+      </a>
 
+      <div class="main-nav__wrapper">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main class="main-container">
     <h1 class="visually-hidden">Седона - страница формы обратной связи</h1>
-    <section class="hero">
-      <div class="hero__wrapper">
+    <section class="hero-intro">
+      <div class="hero-intro__wrapper">
         <h2 class="visually-hidden">Надпись Sedona на фоне гор</h2>
-        <img src="img/text-sedona.svg" width="157" height="78" alt="Sedona">
+        <img src="img/text-sedona.svg" width="229" height="39" alt="Sedona">
       </div>
     </section>
 
@@ -58,7 +58,7 @@
       </div>
     </section>
 
-    <form action="https://echo.htmlacademy.ru/" class="form" method="get">
+    <form class="form" action="https://echo.htmlacademy.ru/" method="get">
       <fieldset class="form__content form__content--full-name">
         <h3 class="form__legend">Представьтесь:</h3>
         <div class="form__field-wrapper">
@@ -81,13 +81,19 @@
         <h3 class="form__legend">Контактная информация:</h3>
         <div class="form__field-wrapper">
           <label class="form__label" for="phone">Контактный телефон*:</label>
-          <input class="form__control" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
-            required>
+          <div class="form__input-wrapper">
+            <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
+              required>
+            <span class="form__control-icon form__control-icon--phone"></span>
+          </div>
         </div>
         <div class="form__field-wrapper">
           <label class="form__label" for="email">Электронная почта*:</label>
-          <input class="form__control" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
-            required>
+          <div class="form__input-wrapper">
+            <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
+              required>
+            <span class="form__control-icon form__control-icon--email"></span>
+          </div>
         </div>
       </fieldset>
 
@@ -155,23 +161,25 @@
       <fieldset class="form__content form__content--feedback">
         <h3 class="form__legend">Опишите свои эмоции:</h3>
         <label class="visually-hidden" for="feedback"></label>
-        <textarea id="feedback" name="feedback" placeholder="Опишите подробно все свои восторги"></textarea>
+        <textarea class="form__feedback" id="feedback" name="feedback" placeholder="Опишите подробно все свои восторги"></textarea>
       </fieldset>
 
-      <button class="form__submit" type="submit">Отправить отзыв</button>
-      <span class="form__text">* — обязательные поля</span>
+      <div class="form__submit-wrapper">
+        <button class="form__submit" type="submit">Отправить отзыв</button>
+        <p class="form__text">* — обязательные поля</p>
+      </div>
     </form>
   </main>
 
   <footer class="main-footer">
     <div class="main-footer__wrapper">
       <h2 class="visually-hidden">Подвал страницы</h2>
-      <div class="main-footer__hashtag hashtag">
+      <section class="main-footer__hashtag">
         <h3 class="visually-hidden">Хэштег</h3>
         <span class="main-footer__hashtag-text">&#35;visitsedona</span>
-      </div>
+      </section>
 
-      <div class="main-footer__social social">
+      <section class="main-footer__social social">
         <h3 class="visually-hidden">Социальные сети</h3>
         <ul class="social__list">
           <li class="social__item">
@@ -190,15 +198,18 @@
             </a>
           </li>
         </ul>
-      </div>
+      </section>
 
-      <div class="main-footer__copyright copyright">
+      <section class="main-footer__copyright copyright">
         <h3 class="visually-hidden">Разработчик сайта</h3>
-        <b class="copyright__text">Разработано:</b>
-        <a class="copyright__link" href="https://htmlacademy.ru/">
-          <span class="visually-hidden">HTML Academy</span>
-        </a>
-      </div>
+        <div class="copyright__wrapper">
+          <p class="copyright__text">Разработано</p>
+          <a class="copyright__link" href="https://htmlacademy.ru/">
+            <span class="visually-hidden">HTML Academy</span>
+          </a>
+        </div>
+      </section>
+
     </div>
   </footer>
 </body>
