@@ -1,3 +1,4 @@
+// Оформление блоков
 .form__content {
   position: relative;
   margin: 0;
@@ -11,6 +12,7 @@
   }
 }
 
+// Псевдоэлемент-разделитель блоков
 .form__content::before {
   position: absolute;
   content: " ";
@@ -21,6 +23,7 @@
   left: 0;
 }
 
+// Шрифт заголовка формы
 .form__legend {
   margin: 0;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -32,26 +35,30 @@
   margin-bottom: 20px;
 }
 
+// Отображение заголовка и поле ввода друг под другом
 .form__field-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }
 
-.form__field-wrapper:not(:last-child) {
-  margin-bottom: 16px;
-}
-
+// Шрифт заголовка поля ввода
 .form__label {
   margin: 0;
   padding-left: 16px;
   text-transform: uppercase;
 }
 
+// Форма ввода контактов и иконка друг за другом
 .form__input-wrapper {
   display: flex;
 }
 
+// Форма ввода и шрифт внутри
 .form__control {
   margin: 0;
   padding: 16px;
@@ -73,6 +80,7 @@
   }
 }
 
+// Иконки телефона и письма к форме ввода контактов
 .form__control-icon {
   width: 58px;
   height: 58px;
@@ -89,21 +97,30 @@
   }
 }
 
+// Выравнивание списка
 .form__list {
-  margin: 0;
   padding: 0;
-  list-style: none;
   text-align: left;
+  list-style: none;
 }
 
+// Внутренние отступы для элементов списка
 .form__item {
   padding: 10px 0 10px 62px;
 }
 
+// Вертикальные отступы между элементами списка (кроме последнего элемента)
 .form__item:not(:last-child) {
   margin-bottom: 16px;
 }
 
+// Относительное позиционирование для элементов списка
+.form__item {
+  position: relative;
+  display: block;
+}
+
+// Шрифт наименований радио-кнопок и чекбокса
 .form__radio-label,
 .form__checkbox-label {
   font-family: "PT Sans", "Arial", sans-serif;
@@ -113,6 +130,50 @@
   color: #000000;
 }
 
+// Другой стиль для радио-кнопок и чекбоксов
+.form__radio-mark,
+.form__checkbox-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  border: transparent;
+  border-radius: 4px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+// Кружок внутри радио-кнопок
+.form__control-input[type="radio"]+.form__radio-mark {
+  border-radius: 50%;
+}
+
+.form__control-input[type="radio"]:checked+.form__radio-mark::before {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/form/radio.svg");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  content: "";
+}
+
+// Галочка внутри выбранного чекбокса
+.form__control-input[type="checkbox"]:checked+.form__checkbox-mark::before {
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  width: 22px;
+  height: 16px;
+  background-image: url("../img/form/checkbox.svg");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+// Форма ввода текста-отзыва
 .form__feedback {
   margin: 0;
   padding: 16px;
@@ -133,6 +194,7 @@
   }
 }
 
+// Кнопка "Оставить отзыв"
 .form__submit-wrapper {
   display: flex;
   flex-direction: column;
@@ -155,6 +217,7 @@
   margin-bottom: 3px;
 }
 
+// Текст под кнопкой
 .form__text {
   margin: 0;
   font-family: "PT Sans", "Arial", sans-serif;

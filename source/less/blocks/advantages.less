@@ -1,7 +1,11 @@
-.advantages__wrapper img {
-  display: block;
+// Стиль для списков
+.advantages__list {
+  padding: 0;
+  list-style: none;
 }
 
+// Оформление блока
+// НАДО ОПТИМИЗИРОВАТЬ!!!
 .advantages__item--main-blue {
   padding: 33px 18px 40px;
   background-color: #81b3d2;
@@ -24,13 +28,13 @@
   }
 }
 
-.advantages__sections-white {
+.advantages__item--white {
   margin: 0;
   padding: 23px 18px 46px;
   background-color: #ffffff;
 }
 
-.advantages__sections-gray {
+.advantages__item--gray {
   margin: 0;
   padding: 24px 18px 28px;
   background-color: #eeeeee;
@@ -40,7 +44,9 @@
     padding: 0 8px;
   }
 }
+// НАДО ОПТИМИЗИРОВАТЬ!!!
 
+// Шрифт заголовков блоков
 .advantages__item-title {
   margin: 0;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -52,6 +58,7 @@
   margin-bottom: 11px;
 }
 
+// Шрифт описания в блоках
 .advantages__item-legend,
 .advantages__item-text {
   margin: 0;
@@ -59,12 +66,7 @@
   text-transform: uppercase;
 }
 
+// Отступ от номера в блоке до текта описания
 .advantages__item-legend {
   margin-bottom: 17px;
-}
-
-.advantages__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
