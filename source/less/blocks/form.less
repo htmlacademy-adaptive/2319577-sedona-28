@@ -7,20 +7,21 @@
   border: none;
   box-sizing: border-box;
 
+  // Внутренние отступы для блока обратной связи
   &--feedback {
     padding: 24px 20px 56px;
   }
-}
 
-// Псевдоэлемент-разделитель блоков
-.form__content::before {
-  position: absolute;
-  content: " ";
-  height: 1px;
-  width: 100%;
-  background-color: #e5e5e5;
-  top: 0;
-  left: 0;
+  // Псевдоэлемент-разделитель блоков
+  &::before {
+    position: absolute;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: #e5e5e5;
+    top: 0;
+    left: 0;
+  }
 }
 
 // Шрифт заголовка формы
@@ -41,6 +42,7 @@
   flex-direction: column;
   text-align: left;
 
+  // Отступ между блоками, кроме последнего элемента
   &:not(:last-child) {
     margin-bottom: 16px;
   }
@@ -70,10 +72,12 @@
   line-height: 26px;
   color: #000000;
 
+  // Прозрачность текста
   &::placeholder {
-    opacity: 30%;
+    opacity: 0.3;
   }
 
+  // Особая ширина для поля ввода телефона и e-mail
   &--phone,
   &--email {
     width: 222px;
@@ -88,10 +92,12 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  // Иконка телефона
   &--phone {
     background-image: url("../img/form/phone.svg");
   }
 
+  // Иконка e-mail
   &--email {
     background-image: url("../img/form/mail.svg");
   }
@@ -104,20 +110,16 @@
   list-style: none;
 }
 
-// Внутренние отступы для элементов списка
+// Внутренние отступы для элементов списка и позиционирование
 .form__item {
+  position: relative;
+  display: block;
   padding: 10px 0 10px 62px;
 }
 
 // Вертикальные отступы между элементами списка (кроме последнего элемента)
 .form__item:not(:last-child) {
   margin-bottom: 16px;
-}
-
-// Относительное позиционирование для элементов списка
-.form__item {
-  position: relative;
-  display: block;
 }
 
 // Шрифт наименований радио-кнопок и чекбокса
@@ -194,7 +196,7 @@
   }
 }
 
-// Кнопка "Оставить отзыв"
+// Отображение кнопки "Оставить отзыв" и текста под ней
 .form__submit-wrapper {
   display: flex;
   flex-direction: column;
@@ -202,6 +204,7 @@
   margin-bottom: 22px;
 }
 
+// Кнопка "Оставить отзыв"
 .form__submit {
   margin: 0;
   padding: 16px 40px;

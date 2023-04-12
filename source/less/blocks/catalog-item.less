@@ -1,16 +1,26 @@
+// Карточки каталога на гридах и внутренние отступы
 .catalog__item {
+  position: relative;
   padding: 24px 20px 25px;
   display: grid;
   grid-template-columns: 280px;
   grid-template-rows: min-content min-content min-content;
   text-align: left;
   text-decoration: none;
+
+  // Псевдоэлемент-разделитель блоков
+  &::before {
+    position: absolute;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: #e5e5e5;
+    top: 0;
+    left: 0;
+  }
 }
 
-.catalog__item img {
-  display: block;
-}
-
+// Шрифт заголовков списка
 .catalog-item__title {
   margin: 0;
   margin-top: 15px;
@@ -24,12 +34,14 @@
   text-transform: uppercase;
 }
 
+// Шрифт текста описания
 .catalog-item__text {
   margin: 0;
   margin-bottom: 11px;
   font-weight: 400;
 }
 
+// Расположение иконки "палец вверх" и цифры-счетчика лайков
 .catalog-item__like {
   display: flex;
   background-image: url("../img/catalog/like-icon.svg");
@@ -38,6 +50,7 @@
   background-color: transparent;
 }
 
+// Шрифт цифры лайков
 .catalog-item__like-count {
   margin: 0;
   padding-top: 5px;
@@ -49,4 +62,3 @@
   color: #000000;
   text-transform: uppercase;
 }
-

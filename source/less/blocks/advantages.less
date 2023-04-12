@@ -7,13 +7,13 @@
 
 // Оформление блока
 // НАДО ОПТИМИЗИРОВАТЬ!!!
-.advantages__item--white {
+.advantages__section--white {
   margin: 0;
   padding: 23px 18px 46px;
   background-color: #ffffff;
 }
 
-.advantages__item--main-blue {
+.advantages__section--main-blue {
   padding: 33px 18px 40px;
   background-color: #81b3d2;
 
@@ -24,7 +24,7 @@
   }
 }
 
-.advantages__item--dark-blue {
+.advantages__section--dark-blue {
   padding: 37px 18px;
   background-color: #81b3d2;
 
@@ -35,7 +35,7 @@
   }
 }
 
-.advantages__item--gray {
+.advantages__section--gray {
   margin: 0;
   padding: 24px 18px 28px;
   background-color: #eeeeee;
@@ -43,6 +43,20 @@
   .advantages__item:not(:last-child) {
     margin-bottom: 49px;
     padding: 0 8px;
+  }
+
+  .advantages__item {
+    position: relative;
+  }
+
+  .advantages__item:not(:first-child)::before {
+    position: absolute;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: #d6d6d6;
+    top: -24px;
+    left: 0;
   }
 }
 // НАДО ОПТИМИЗИРОВАТЬ!!!

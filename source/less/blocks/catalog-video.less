@@ -1,12 +1,29 @@
-.catalog-video__header {
-  padding: 17px 26px 38px 28px;
+// Относительное позиционирование для блока
+.catalog-video {
+  position: relative;
 }
 
+//Внутренние отступы для блока и псевдоэлемент-разделитель блоков
+.catalog-video__header {
+  padding: 17px 26px 38px 28px;
+
+  &::before {
+    position: absolute;
+    content: " ";
+    height: 1px;
+    width: 100%;
+    background-color: #e5e5e5;
+    top: 0;
+    left: 0;
+  }
+}
+
+// Изображение видеоплеера в середине
 .catalog-video__wrapper img {
-  display: block;
   margin: 0 auto;
 }
 
+// Шрифт заголовка блока
 .catalog-video__title {
   margin: 0;
   margin-bottom: 24px;
@@ -19,6 +36,7 @@
   text-transform: uppercase;
 }
 
+// Шрифт описания блока
 .catalog-video__text {
   margin: 0;
   font-weight: 400;
