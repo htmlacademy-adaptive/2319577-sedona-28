@@ -1,12 +1,22 @@
 // Карточки каталога на гридах и внутренние отступы
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  padding: 24px 20px 25px;
+}
+
 .catalog__item {
   position: relative;
-  padding: 24px 20px 25px;
   display: grid;
   grid-template-columns: 280px;
   grid-template-rows: min-content min-content min-content;
   text-align: left;
   text-decoration: none;
+
+  // Отступы между карточками (кроме последней)
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
 
   // Псевдоэлемент-разделитель блоков
   &::before {
@@ -27,8 +37,8 @@
   margin-bottom: 10px;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 21px;
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
