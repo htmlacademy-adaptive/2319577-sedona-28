@@ -5,9 +5,13 @@
   list-style: none;
 }
 
+.advantages__item {
+  position: relative;
+}
+
 // Оформление блоков
 // Блок №1 с картинкой
-.advantages__item-wrapper--main-blue {
+.advantages__wrapper--main-blue {
   padding: 33px 18px 40px;
   background-color: #81b3d2;
   color: #ffffff;
@@ -20,26 +24,27 @@
 }
 
 // Блок "Жилье, Еда, Сувениры" с иконками
-.advantages__item {
-  position: relative;
+.advantages__list--icon {
+  padding: 24px 18px 21px;
+  background-color: #ffffff;
+}
 
-  &--icon {
-    padding: 23px 18px 25px;
-    background-color: #ffffff;
-  }
+.advantages__item--icon {
+  margin-bottom: 25px;
+  text-align: left;
 }
 
 //Внутренние отступы блоков "Жилье, Еда, Сувениры"
-.advantages__item-wrapper--white {
+.advantages__wrapper--white {
   padding: 8px 0 0 47px;
-  text-align: left;
 
   .advantages__item-title {
     margin-bottom: 16px;
   }
 }
 
-.advantages__item-wrapper {
+// Иконки в блоке "Жилье, Еда, Сувениры"
+.advantages__wrapper {
   background-repeat: no-repeat;
 
   &--housing {
@@ -55,12 +60,11 @@
   &--souvenire {
     background-image: url("../img/index/gift.svg");
     background-position: start;
-    padding-bottom: 21px;
   }
 }
 
 // Блок №2 с картинкой
-.advantages__item-wrapper--dark-blue {
+.advantages__wrapper--dark-blue {
   padding: 37px 25px;
   background-color: #81b3d2;
 
@@ -72,9 +76,17 @@
 }
 
 // Блоки №3, 4, 5
-.advantages__item-wrapper--gray {
-  padding: 24px 25px;
+.advantages__list--gray {
+  padding: 24px 18px 28px;
   background-color: #eeeeee;
+}
+
+.advantages__item--gray {
+  padding: 0 18px;
+
+  &:not(:last-child) {
+    margin-bottom: 49px;
+  }
 
   &:not(:first-child)::before {
     position: absolute;
@@ -82,13 +94,9 @@
     height: 1px;
     width: 100%;
     background-color: #d6d6d6;
-    top: 0;
+    top: -24px;
     left: 0;
   }
-}
-
-.advantages__item:last-child .advantages__item-wrapper--gray {
-  padding: 24px 32px 28px;
 }
 
 // Шрифт заголовков блоков
