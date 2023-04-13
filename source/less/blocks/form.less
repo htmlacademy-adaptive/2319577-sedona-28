@@ -147,11 +147,11 @@
 }
 
 // Кружок внутри радио-кнопок
-.form__control-input[type="radio"]+.form__radio-mark {
+.form__control-input[type="radio"] + .form__radio-mark {
   border-radius: 50%;
 }
 
-.form__control-input[type="radio"]:checked+.form__radio-mark::before {
+.form__control-input[type="radio"]:checked + .form__radio-mark::before {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -164,7 +164,7 @@
 }
 
 // Галочка внутри выбранного чекбокса
-.form__control-input[type="checkbox"]:checked+.form__checkbox-mark::before {
+.form__control-input[type="checkbox"]:checked + .form__checkbox-mark::before {
   position: absolute;
   top: 15px;
   left: 12px;
