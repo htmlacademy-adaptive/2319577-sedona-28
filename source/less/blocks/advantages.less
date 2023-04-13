@@ -5,17 +5,12 @@
   list-style: none;
 }
 
-// Оформление блока
-// НАДО ОПТИМИЗИРОВАТЬ!!!
-.advantages__section--white {
-  margin: 0;
-  padding: 23px 18px 46px;
-  background-color: #ffffff;
-}
-
-.advantages__section--main-blue {
+// Оформление блоков
+// Блок №1 с картинкой
+.advantages__item-wrapper--main-blue {
   padding: 33px 18px 40px;
   background-color: #81b3d2;
+  color: #ffffff;
 
   .advantages__item-title,
   .advantages__item-legend,
@@ -24,8 +19,49 @@
   }
 }
 
-.advantages__section--dark-blue {
-  padding: 37px 18px;
+// Блок "Жилье, Еда, Сувениры" с иконками
+.advantages__item  {
+  position: relative;
+
+  &--icon {
+    padding: 23px 18px 25px;
+    background-color: #ffffff;
+  }
+}
+
+//Внутренние отступы блоков "Жилье, Еда, Сувениры"
+.advantages__item-wrapper--white {
+  padding: 8px 0 0 47px;
+  text-align: left;
+
+  .advantages__item-title {
+    margin-bottom: 16px;
+  }
+}
+
+.advantages__item-wrapper {
+  background-repeat: no-repeat;
+
+  &--housing {
+    background-image: url("../img/index/house.svg");
+    background-position: start;
+  }
+
+  &--food {
+    background-image: url("../img/index/burger.svg");
+    background-position: start;
+  }
+
+  &--souvenire {
+    background-image: url("../img/index/gift.svg");
+    background-position: start;
+    padding-bottom: 21px;
+  }
+}
+
+// Блок №2 с картинкой
+.advantages__item-wrapper--dark-blue {
+  padding: 37px 25px;
   background-color: #81b3d2;
 
   .advantages__item-title,
@@ -35,31 +71,25 @@
   }
 }
 
-.advantages__section--gray {
-  margin: 0;
-  padding: 24px 18px 28px;
+// Блоки №3, 4, 5
+.advantages__item-wrapper--gray {
+  padding: 24px 25px;
   background-color: #eeeeee;
 
-  .advantages__item:not(:last-child) {
-    margin-bottom: 49px;
-    padding: 0 8px;
-  }
-
-  .advantages__item {
-    position: relative;
-  }
-
-  .advantages__item:not(:first-child)::before {
+  &:not(:first-child)::before {
     position: absolute;
     content: " ";
     height: 1px;
     width: 100%;
     background-color: #d6d6d6;
-    top: -24px;
+    top: 0;
     left: 0;
   }
 }
-// НАДО ОПТИМИЗИРОВАТЬ!!!
+
+.advantages__item:last-child .advantages__item-wrapper--gray {
+  padding: 24px 32px 28px;
+}
 
 // Шрифт заголовков блоков
 .advantages__item-title {
@@ -76,7 +106,6 @@
 // Шрифт описания в блоках
 .advantages__item-legend,
 .advantages__item-text {
-  margin: 0;
   font-weight: 400;
   text-transform: uppercase;
 }
