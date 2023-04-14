@@ -2,13 +2,14 @@
 .catalog__list {
   margin: 0;
   padding: 0;
-  padding: 24px 20px 25px;
+  padding: 24px 0 25px;
 }
 
-.catalog__item {
+.catalog-item {
   position: relative;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: 280px;
+  grid-template-columns: 100%;
   grid-template-rows: min-content min-content min-content;
   text-align: left;
   text-decoration: none;
@@ -25,30 +26,25 @@
     height: 1px;
     width: 100%;
     background-color: #e5e5e5;
-    top: 0;
+    top: -25px;
     left: 0;
   }
 }
 
 // Шрифт заголовков списка
 .catalog-item__title {
-  margin: 0;
   margin-top: 15px;
-  margin-bottom: 10px;
-  font-family: "PT Sans", "Arial", sans-serif;
+  margin-bottom: 2px;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
-  color: #000000;
-  text-decoration: none;
-  text-transform: uppercase;
+  color: @title-text;
 }
 
 // Шрифт текста описания
 .catalog-item__text {
-  margin: 0;
-  margin-bottom: 11px;
-  font-weight: 400;
+  text-transform: none;
+  margin-bottom: 10px;
 }
 
 // Расположение иконки "палец вверх" и цифры-счетчика лайков
@@ -65,10 +61,7 @@
   margin: 0;
   padding-top: 5px;
   padding-left: 37px;
-  font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
-  color: #000000;
+  color: @title-text;
   text-transform: uppercase;
 }

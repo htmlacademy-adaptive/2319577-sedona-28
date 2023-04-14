@@ -13,20 +13,18 @@
 // Блок №1 с картинкой
 .advantages__wrapper--main-blue {
   padding: 33px 18px 40px;
-  background-color: #81b3d2;
-  color: #ffffff;
+  background-color: @darkblue;
+  color: @white;
 
-  .advantages__item-title,
-  .advantages__item-legend,
-  .advantages__item-text {
-    color: #ffffff;
+  * {
+    color: @white;
   }
 }
 
 // Блок "Жилье, Еда, Сувениры" с иконками
 .advantages__list--icon {
   padding: 24px 18px 21px;
-  background-color: #ffffff;
+  background-color: @white;
 }
 
 .advantages__item--icon {
@@ -66,19 +64,17 @@
 // Блок №2 с картинкой
 .advantages__wrapper--dark-blue {
   padding: 37px 25px;
-  background-color: #81b3d2;
+  background-color: @darkblue;
 
-  .advantages__item-title,
-  .advantages__item-legend,
-  .advantages__item-text {
-    color: #ffffff;
+  * {
+    color: @white;
   }
 }
 
 // Блоки №3, 4, 5
 .advantages__list--gray {
   padding: 24px 18px 28px;
-  background-color: #eeeeee;
+  background-color: @grey;
 }
 
 .advantages__item--gray {
@@ -93,30 +89,21 @@
     content: " ";
     height: 1px;
     width: 100%;
-    background-color: #d6d6d6;
-    top: -24px;
+    background-color: @decor;
+    top: -26px;
     left: 0;
   }
 }
 
 // Шрифт заголовков блоков
 .advantages__item-title {
-  margin: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
-  text-transform: uppercase;
   margin-bottom: 11px;
 }
 
 // Шрифт описания в блоках
-.advantages__item-legend,
-.advantages__item-text {
-  font-weight: 400;
-  text-transform: uppercase;
-}
+// .advantages__item-legend,
+// .advantages__item-text {
+// }
 
 // Отступ от номера в блоке до текта описания
 .advantages__item-legend {

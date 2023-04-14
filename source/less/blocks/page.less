@@ -1,16 +1,31 @@
 .page__body {
   width: 320px;
+  min-height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  font-weight: 400;
-  color: #333333;
-  background-color: #f7e7e7;
   text-align: center;
+  text-transform: uppercase;
+  color: @description-text;
   flex-grow: 1;
-  // Размер блока на всю страницу
-  min-height: 100%;
+  background-color: #f7e7e7;
+
+  .site-list__text,
+  .advantages-intro__title,
+  .advantages__item-title,
+  .catalog-intro__title,
+  .catalog-video__title,
+  .form-intro__title,
+  .form__legend,
+  .form__radio-label,
+  .form__checkbox-label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: @title-text;
+  }
 }

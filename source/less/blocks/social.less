@@ -1,8 +1,9 @@
 .social__list {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  gap: 6px;
   list-style: none;
 }
 
@@ -10,6 +11,11 @@
 .social__item {
   width: 48px;
   height: 48px;
-  background-color: #81b3d2;
+  padding: 10px;
+  background-color: @darkblue;
+}
+
+.social__link {
+  position: relative;
   cursor: pointer;
 }

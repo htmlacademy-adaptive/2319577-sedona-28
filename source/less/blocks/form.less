@@ -3,13 +3,28 @@
   position: relative;
   margin: 0;
   width: 320px;
-  padding: 24px 20px 39px;
+  padding: 25px 20px 38px;
   border: none;
   box-sizing: border-box;
 
+  // Внутренние отступы для блока с контактными данными
+  &--contact {
+    padding: 25px 20px 34px;
+  }
+
+  // Внутренние отступы для блока с радио-кнопками
+  &--impression {
+    padding: 25px 20px 10px;
+  }
+
+  // Внутренние отступы для блока с чекбоксами
+  &--place-of-interest {
+    padding: 25px 20px 10px;
+  }
+
   // Внутренние отступы для блока обратной связи
   &--feedback {
-    padding: 24px 20px 56px;
+    padding: 24px 20px 52px;
   }
 
   // Псевдоэлемент-разделитель блоков
@@ -26,13 +41,6 @@
 
 // Шрифт заголовка формы
 .form__legend {
-  margin: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
@@ -50,9 +58,7 @@
 
 // Шрифт заголовка поля ввода
 .form__label {
-  margin: 0;
   padding-left: 16px;
-  text-transform: uppercase;
 }
 
 // Форма ввода контактов и иконка друг за другом
@@ -65,12 +71,12 @@
   margin: 0;
   padding: 16px;
   border: none;
-  background: #f2f2f2;
+  background: @input;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  color: #000000;
+  color: @title-text;
 
   // Прозрачность текста
   &::placeholder {
@@ -125,11 +131,8 @@
 // Шрифт наименований радио-кнопок и чекбокса
 .form__radio-label,
 .form__checkbox-label {
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
+  text-transform: none;
+  color: @title-text;
 }
 
 // Другой стиль для радио-кнопок и чекбоксов
@@ -142,7 +145,7 @@
   height: 46px;
   border: transparent;
   border-radius: 4px;
-  background: #f2f2f2;
+  background: @input;
   cursor: pointer;
 }
 
@@ -184,12 +187,12 @@
   resize: none;
   border: none;
   outline: none;
-  background: #f2f2f2;
+  background: @input;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  color: #000000;
+  color: @title-text;
 
   &::placeholder {
     opacity: 0.3;
@@ -206,29 +209,25 @@
 
 // Кнопка "Оставить отзыв"
 .form__submit {
-  margin: 0;
   padding: 16px 40px;
   display: block;
   font-family: "PT Sans", "Arial", sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 26px;
   text-transform: uppercase;
-  color: #ffffff;
-  background: #81b3d2;
+  color: @white;
+  background: @darkblue;
   border: none;
   margin-bottom: 3px;
 }
 
 // Текст под кнопкой
 .form__text {
-  margin: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-weight: 400;
   font-size: 12px;
   line-height: 21px;
   text-transform: uppercase;
-  color: #333333;
+  color: @description-text;
   opacity: 0.6;
   text-align: right;
 }
