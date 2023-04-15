@@ -1,1 +1,23 @@
-// Подклассы пока отсутствуют, возможно, надо удалить
+.main-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  // background-color: @white;
+  // background-color: @description-text;
+  // min-height: 56px;
+}
+
+// Главный логотип
+.main-header__logo {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  margin-bottom: -40px;
+}
+
+// Размер логотипа
+.main-header__logo img {
+  width: 185px;
+  height: 96px;
+}

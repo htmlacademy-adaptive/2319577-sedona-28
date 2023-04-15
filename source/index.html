@@ -9,7 +9,13 @@
 
 <body class="page__body">
   <header class="main-header">
-    <nav class="main-nav">
+    <!-- <a class="main-header__logo" href="index.html">
+      <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
+    </a> -->
+    <nav class="main-nav main-nav--closed main-nav--nojs">
+      <button class="main-nav__toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
       <div class="main-nav__wrapper">
         <ul class="main-nav__list site-list">
           <li class="site-list__item site-list__item--active">
@@ -25,16 +31,6 @@
             <a class="site-list__text" href="#">HTML Academy</a>
           </li>
         </ul>
-      </div>
-
-      <a class="main-nav__logo">
-        <img src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
-      </a>
-
-      <div class="main-nav__wrapper">
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
       </div>
     </nav>
   </header>
@@ -193,6 +189,8 @@
 
     </div>
   </footer>
+
+<script src="script.js"></script>
 </body>
 
 </html>

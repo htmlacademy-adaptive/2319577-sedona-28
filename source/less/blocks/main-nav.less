@@ -1,6 +1,7 @@
 // Относительное позиционирование для навигации
 .main-nav {
   position: relative;
+  width: auto;
 }
 
 // Кнопка открытия меню навигации
@@ -8,34 +9,112 @@
   position: absolute;
   top: 17px;
   right: 20px;
+  z-index: 2;
   width: 23px;
   height: 22px;
   padding: 0;
   border: none;
-  background-image: url("../img/button-menu.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
+  // background-color: transparent;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+// Стиль кнопки закрытого меню
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: 4px;
+  background-color: @darkblue;
+  box-shadow: 0 9px 0 0 @darkblue, 0 18px 0 0 @darkblue;
+}
+
+// Настройки для мобильной версии
+@media (max-width: @mobile-width-only) {
+  .main-nav--closed .site-list__item {
+    display: none;
+
+    // &--active {
+    //   display: block;
+    // }
+  }
+
+  // .main-nav--closed .site-list__item--active a {
+  //   text-align: center;
+  // }
+
+  .main-nav--closed .main-nav__wrapper {
+    position: absolute;
+    top: 0;
+    min-height: 56px;
+    background-color: @white;
+  }
+
+  .main-nav--opened .main-nav__wrapper {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__wrapper {
+    position: static;
+    min-height: 0;
+  }
+
+  .main-nav--nojs .site-list__item {
+    display: block;
+  }
+
+  .main-nav--nojs .site-list__item--active a {
+    text-align: center;
+  }
+}
+
+// Стиль кнопки при открытом меню
+.main-nav--opened .main-nav__toggle {
+  width: 22px;
+  height: 22px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -2px;
+    width: 26px;
+    height: 4px;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 // Стиль полосы навигации
-.main-nav__wrapper {
-  position: relative;
-  min-height: 56px;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-}
-
-// Главный логотип
-.main-nav__logo {
-  position: absolute;
-  z-index: 1;
-  display: block;
-  padding: 0 67px;
-  margin-bottom: -40px;
-}
+// .main-nav__wrapper {
+//   position: relative;
+//   min-height: 56px;
+//   margin: 0;
+//   padding: 0;
+//   background-color: @white;
+// }
 
 // Элементы меню навигации
 .main-nav__list {
