@@ -1,23 +1,15 @@
 .main-header {
   position: relative;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  // background-color: @white;
-  // background-color: @description-text;
-  // min-height: 56px;
+  width: 100%;
 }
 
 // Главный логотип
-.main-header__logo {
+.main-header__logo-image {
   position: absolute;
   top: 0;
+  left: 50%;
   z-index: 1;
-  margin-bottom: -40px;
-}
-
-// Размер логотипа
-.main-header__logo img {
-  width: 185px;
-  height: 96px;
+  transform: translate(-50%);
+  // margin-bottom: -40px;
 }

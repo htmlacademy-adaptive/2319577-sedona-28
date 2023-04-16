@@ -1,3 +1,4 @@
+// Шрифты на странице
 .page {
   height: 100%;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -5,14 +6,8 @@
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
-  color: @description-text;
+  color: @lightblack;
   background-color: #f7e7e7;
-}
-
-.page__body {
-  width: 320px;
-  min-height: 100%;
-  margin: 0 auto;
 
   .advantages-intro__title,
   .advantages__item-title,
@@ -25,6 +20,14 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 26px;
-    color: @title-text;
+    color: @black;
   }
+}
+
+// Отображение страницы
+.page__body {
+  width: 320px;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0 auto;
 }

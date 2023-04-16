@@ -1,11 +1,22 @@
 // Относительное позиционирование для навигации
 .main-nav {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: auto;
+  background-color: @white;
+
+  // // Навигация в одну строку и цвет фона белый при планшетной версии экрана и шире
+  // @media (min-width: @tablet-width) {
+  //   display: flex;
+  //   background-color: @white;
+  // }
 }
 
-// Кнопка открытия меню навигации
+// Место под кнопку меню навигации
 .main-nav__toggle {
+  display: block;
   position: absolute;
   top: 17px;
   right: 20px;
@@ -14,7 +25,7 @@
   height: 22px;
   padding: 0;
   border: none;
-  // background-color: transparent;
+  background-color: transparent;
   cursor: pointer;
 
   &:hover {
@@ -24,9 +35,14 @@
   &:active {
     opacity: 0.3;
   }
+
+  // // Не отображается при планшетной версии экрана и шире
+  // @media (min-width: @tablet-width) {
+  //   display: none;
+  // }
 }
 
-// Стиль кнопки закрытого меню
+// Стиль кнопки закрытого меню (3 полоски друг под другом)
 .main-nav--closed .main-nav__toggle::before {
   content: "";
   position: absolute;
@@ -35,57 +51,16 @@
   width: 23px;
   height: 4px;
   background-color: @darkblue;
+  // Добавление 2-х полос с помощью теней
   box-shadow: 0 9px 0 0 @darkblue, 0 18px 0 0 @darkblue;
 }
 
-// Настройки для мобильной версии
-@media (max-width: @mobile-width-only) {
-  .main-nav--closed .site-list__item {
-    display: none;
-
-    // &--active {
-    //   display: block;
-    // }
-  }
-
-  // .main-nav--closed .site-list__item--active a {
-  //   text-align: center;
-  // }
-
-  .main-nav--closed .main-nav__wrapper {
-    position: absolute;
-    top: 0;
-    min-height: 56px;
-    background-color: @white;
-  }
-
-  .main-nav--opened .main-nav__wrapper {
-    display: none;
-  }
-
-  .main-nav--nojs .main-nav__toggle {
-    display: none;
-  }
-
-  .main-nav--nojs .main-nav__wrapper {
-    position: static;
-    min-height: 0;
-  }
-
-  .main-nav--nojs .site-list__item {
-    display: block;
-  }
-
-  .main-nav--nojs .site-list__item--active a {
-    text-align: center;
-  }
-}
-
-// Стиль кнопки при открытом меню
+// Стиль кнопки при открытом меню (перекрестие)
 .main-nav--opened .main-nav__toggle {
   width: 22px;
   height: 22px;
 
+  // Две полосы
   &::before,
   &::after {
     content: "";
@@ -94,9 +69,10 @@
     right: -2px;
     width: 26px;
     height: 4px;
-    background-color: #ffffff;
+    background-color: @white;
   }
 
+  // Перекрестие полос
   &::before {
     transform: rotate(45deg);
     box-shadow: none;
@@ -107,19 +83,156 @@
   }
 }
 
-// Стиль полосы навигации
-// .main-nav__wrapper {
-//   position: relative;
-//   min-height: 56px;
-//   margin: 0;
-//   padding: 0;
-//   background-color: @white;
+// // Настройки отображения панели навигации для мобильной версии
+// @media (max-width: @mobile-width-only) {
+//   .main-nav--closed .main-nav__wrapper {
+//     display: none;
+//   }
 // }
 
-// Элементы меню навигации
+// Отображение элементов меню навигации для всех видов экрана
+// Элементы друг под другом
 .main-nav__list {
-  background-color: #81b3d2;
+  flex-wrap: wrap;
   list-style: none;
+  border: none;
   padding: 0;
   margin: 0;
+
+  // // Элементы в один ряд при планшетной версии экрана и шире
+  // @media (min-width: @tablet-width) {
+  //   display: flex;
+  // }
+}
+
+// Элементы меню навигации
+.main-nav__item {
+  width: 100%;
+  min-height: 55px;
+  position: relative;
+  background-color: @darkblue;
+
+  // Декоративные рамки сверху и снизу списка меню навигации мобильной версии
+  // @media (max-width: @mobile-width-only) {
+    width: 100%;
+    border-top: 1px solid @lighten-blue;
+    border-bottom: 1px solid @darken-blue;
+
+    // Нет рамки сверху у первого элемента списка меню
+    &:first-child {
+      border-top: none;
+    // }
+
+    // Нет рамки снизу у последнего элемента списка меню
+    &:last-child {
+      border-bottom: none;
+
+      // Тень над последним элементом меню
+      &::after {
+        z-index: 1;
+        width: 100%;
+        height: 7px;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+        content: "";
+      }
+    }
+  }
+
+  // Перестройка элементов меню для планшетной версии экрана и шире
+  // @media (min-width: @tablet-width) {
+  //   width: 20%;
+
+  //   & {
+  //     background-color: @white;
+  //   }
+
+  //   &:nth-child(4n+3) {
+  //     margin-left: 20%;
+  //   }
+  // }
+}
+
+// Список меню навигации
+.main-nav__link {
+  width: 100%;
+  min-height: 55px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  color: @white;
+
+  // Цвет элементов меню на мобильной ширине экрана
+  @media (max-width: @mobile-width-only) {
+    &:hover {
+      background-color: @hover;
+    }
+
+    &:active {
+      background-color: @active;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  // Цвет элементов меню на планшетной и выше ширине экрана
+  // @media (min-width: @tablet-width) {
+  //   color: @black;
+
+  //   // Выделение активного элемента меню
+  //   &--current {
+  //     color: @current;
+  //   }
+
+  //   &:hover {
+  //     color: @darkblue;
+  //   }
+
+  //   &:active {
+  //     opacity: 0.3;
+  //   }
+  // }
+}
+
+// Поведение кнопки и меню навигации +nojs
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
+.main-nav--nojs .main-nav__wrapper {
+  position: static;
+  min-height: 0;
+}
+
+.main-nav--nojs .main-nav__list {
+  display: block;
+}
+
+.main-nav--nojs .main-nav__item {
+  display: block;
+  background-color: @darkblue;
+}
+
+.main-nav--nojs .main-nav__link--current {
+  width: 100%;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  color: @white;
 }
