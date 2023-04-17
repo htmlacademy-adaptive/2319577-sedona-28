@@ -7,20 +7,20 @@
   position: relative;
   background-color: @white;
 
-  // // Навигация в одну строку и цвет фона белый при планшетной версии экрана и шире
-  // @media (min-width: @tablet-width) {
-  //   display: flex;
-  //   background-color: @white;
-  // }
+  // Навигация в одну строку и цвет фона белый при планшетной версии экрана и шире
+  @media (min-width: @tablet-width) {
+    display: flex;
+    background-color: @white;
+  }
 }
 
 // Место под кнопку меню навигации
 .main-nav__toggle {
+  z-index: 3;
   display: block;
   position: absolute;
   top: 17px;
   right: 20px;
-  z-index: 2;
   width: 23px;
   height: 22px;
   padding: 0;
@@ -36,10 +36,10 @@
     opacity: 0.3;
   }
 
-  // // Не отображается при планшетной версии экрана и шире
-  // @media (min-width: @tablet-width) {
-  //   display: none;
-  // }
+  // Не отображается при планшетной версии экрана и шире
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
 }
 
 // Стиль кнопки закрытого меню (3 полоски друг под другом)
@@ -83,12 +83,12 @@
   }
 }
 
-// // Настройки отображения панели навигации для мобильной версии
-// @media (max-width: @mobile-width-only) {
-//   .main-nav--closed .main-nav__wrapper {
-//     display: none;
-//   }
-// }
+// Настройки отображения панели навигации для мобильной версии
+@media (max-width: @mobile-width-only) {
+  .main-nav--closed .main-nav__wrapper {
+    display: none;
+  }
+}
 
 // Отображение элементов меню навигации для всех видов экрана
 // Элементы друг под другом
@@ -99,21 +99,22 @@
   padding: 0;
   margin: 0;
 
-  // // Элементы в один ряд при планшетной версии экрана и шире
-  // @media (min-width: @tablet-width) {
-  //   display: flex;
-  // }
+  // Элементы в один ряд при планшетной версии экрана и шире
+  @media (min-width: @tablet-width) {
+    display: flex;
+  }
 }
 
 // Элементы меню навигации
 .main-nav__item {
+  z-index: 2;
   width: 100%;
   min-height: 55px;
   position: relative;
   background-color: @darkblue;
 
   // Декоративные рамки сверху и снизу списка меню навигации мобильной версии
-  // @media (max-width: @mobile-width-only) {
+  @media (max-width: @mobile-width-only) {
     width: 100%;
     border-top: 1px solid @lighten-blue;
     border-bottom: 1px solid @darken-blue;
@@ -121,7 +122,7 @@
     // Нет рамки сверху у первого элемента списка меню
     &:first-child {
       border-top: none;
-    // }
+    }
 
     // Нет рамки снизу у последнего элемента списка меню
     &:last-child {
@@ -141,17 +142,19 @@
   }
 
   // Перестройка элементов меню для планшетной версии экрана и шире
-  // @media (min-width: @tablet-width) {
-  //   width: 20%;
+  @media (min-width: @tablet-width) {
+    z-index: 0;
+    width: 20%;
 
-  //   & {
-  //     background-color: @white;
-  //   }
+    & {
+      background-color: @white;
+    }
 
-  //   &:nth-child(4n+3) {
-  //     margin-left: 20%;
-  //   }
-  // }
+    // Добавляет отступ слева для логотипа
+    &:nth-child(4n+3) {
+      margin-left: 20%;
+    }
+  }
 }
 
 // Список меню навигации
@@ -184,22 +187,22 @@
   }
 
   // Цвет элементов меню на планшетной и выше ширине экрана
-  // @media (min-width: @tablet-width) {
-  //   color: @black;
+  @media (min-width: @tablet-width) {
+    color: @black;
 
-  //   // Выделение активного элемента меню
-  //   &--current {
-  //     color: @current;
-  //   }
+    // Выделение активного элемента меню
+    &--current {
+      color: @current;
+    }
 
-  //   &:hover {
-  //     color: @darkblue;
-  //   }
+    &:hover {
+      color: @darkblue;
+    }
 
-  //   &:active {
-  //     opacity: 0.3;
-  //   }
-  // }
+    &:active {
+      opacity: 0.3;
+    }
+  }
 }
 
 // Поведение кнопки и меню навигации +nojs
@@ -218,7 +221,7 @@
 
 .main-nav--nojs .main-nav__item {
   display: block;
-  background-color: @darkblue;
+  // background-color: @darkblue;
 }
 
 .main-nav--nojs .main-nav__link--current {
@@ -234,5 +237,5 @@
   text-transform: uppercase;
   text-align: center;
   border: none;
-  color: @white;
+  // color: @white;
 }
