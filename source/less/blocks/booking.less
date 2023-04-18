@@ -1,6 +1,27 @@
+.booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 // Отступы у блока бронирования гостиниц
 .booking__wrapper {
-  padding: 40px 18px 49px;
+  min-width: 284px;
+  max-width: 460px;
+  margin: 0 18px;
+  margin-top: 40px;
+  margin-bottom: 49px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-top: 60px;
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 60px;
+    margin-bottom: 66px;
+  }
 }
 
 // Шрифт заголовока блока
@@ -9,11 +30,26 @@
   font-size: 21px;
   line-height: 26px;
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
 }
 
 // Шрифт текта описания
 .booking__text {
   margin-bottom: 32px;
+
+  @media (max-width: @mobile-width-only) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 44px;
+  }
 }
 
 // Оформление кнопки "Найти гостиницу"
@@ -23,6 +59,12 @@
   font-size: 21px;
   line-height: 26px;
   color: @white;
-  padding: 16px 49px;
+  padding: 16px 0;
   background-color: @darkblue;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    padding-top: 14px;
+    padding-bottom: 17px;
+  }
 }
