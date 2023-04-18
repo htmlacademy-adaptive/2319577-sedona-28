@@ -1,10 +1,10 @@
 // Относительное позиционирование для навигации
 .main-nav {
+  position: relative;
   width: 100%;
   min-height: 56px;
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: @white;
 
   // Навигация в одну строку и цвет фона белый при планшетной версии экрана и шире
@@ -17,8 +17,8 @@
 // Место под кнопку меню навигации
 .main-nav__toggle {
   z-index: 3;
-  display: block;
   position: absolute;
+  display: block;
   top: 17px;
   right: 20px;
   width: 23px;
@@ -221,7 +221,6 @@
 
 .main-nav--nojs .main-nav__item {
   display: block;
-  // background-color: @darkblue;
 }
 
 .main-nav--nojs .main-nav__link--current {
@@ -237,5 +236,4 @@
   text-transform: uppercase;
   text-align: center;
   border: none;
-  // color: @white;
 }
