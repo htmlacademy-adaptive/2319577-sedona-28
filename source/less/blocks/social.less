@@ -1,8 +1,10 @@
+// Соц сети в ряд с учетом переполнения
 .social__list {
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 6px;
   list-style: none;
 }
@@ -10,12 +12,8 @@
 // Отображение квадратов соц. сетей
 .social__item {
   background-color: @darkblue;
-}
-
-.social__link {
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
+  min-width: 48px;
+  min-height: 48px;
 
   &:hover {
     background-color: @hover;
@@ -27,6 +25,16 @@
   }
 }
 
+// Относительное позиционирование для ссылок
+.social__link {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+// Позиционирование иконок относительно квадратов
 .social__icon {
-  padding: 12px 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
 }

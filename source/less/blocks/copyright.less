@@ -1,23 +1,35 @@
-.copyright__wrapper {
-  position: relative;
-  padding: 7px 40px 7px 0;
-}
-
-.copyright__text {
-  color: @black;
-  text-align: left;
-}
-
+// Обертка блока копирайта
 .copyright__link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 27px;
-  height: 34px;
-  padding: 0;
-  border: none;
-  background-image: url("../img/htmlacademy.svg");
-  background-repeat: no-repeat;
-  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+}
+
+.copyright__link:hover .copyright__text {
+  color: @hover;
+}
+
+.copyright__link:active .copyright__text {
+  color: @logo-active;
+}
+
+// Цвет текста "Разработано" и его выравнивание
+.copyright__text {
+  margin-right: 9px;
+  color: @black;
+}
+
+// Позиционирование иконок относительно квадратов
+.copyright__icon {
+  display: block;
+  fill: @black;
+
+  &:hover {
+    fill: @hover;
+  }
+
+  &:active {
+    fill: @logo-active;
+  }
 }
