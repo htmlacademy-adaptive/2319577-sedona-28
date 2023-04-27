@@ -1,5 +1,24 @@
+.catalog-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: inherit;
+}
+
 .catalog-intro__header {
-  padding: 37px 20px 38px;
+  min-width: 280px;
+  max-width: 440px;
+  margin: 0 20px;
+  margin-top: 37px;
+  margin-bottom: 38px;
+  align-items: stretch;
+
+  @media (min-width: @tablet-width) {
+    width: 440px;
+    margin: 0;
+    margin-top: 66px;
+    margin-bottom: 67px;
+  }
 }
 
 .catalog-intro__title {

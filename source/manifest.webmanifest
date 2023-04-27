@@ -15,6 +15,11 @@
       "sizes": "192x192"
     },
     {
+      "src": "img/favicons/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
       "src": "img/favicons/apple-touch-icon-72x72.png",
       "type": "image/png",
       "sizes": "72x72"

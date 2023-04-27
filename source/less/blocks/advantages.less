@@ -16,6 +16,12 @@
 // Оформление блоков
 // Блоки №1 и №2 с картинками, отображение в ряд с полным заполнением
 .advantages__item--img {
+  img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+
   @media (min-width: @tablet-width) {
     display: flex;
     flex-direction: row;
@@ -31,6 +37,7 @@
 }
 // Блок №1 с картинкой
 .advantages__wrapper--main-blue {
+  width: 100%;
   background-color: @darkblue;
   color: @white;
 
@@ -171,6 +178,7 @@
 
 // Блок №2 с картинкой
 .advantages__wrapper--dark-blue {
+  width: 100%;
   background-color: @darkblue;
   color: @white;
 
