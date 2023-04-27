@@ -53,51 +53,53 @@
       <div class="form-intro__wrapper">
         <header class="form-intro__header">
           <h2 class="form-intro__title">Оставьте свой отзыв</h2>
-          <p class="form-intro__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами
-            достопримечательностях</p>
+          <p class="form-intro__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
         </header>
       </div>
     </section>
 
     <form class="form" action="https://echo.htmlacademy.ru/" method="get">
-      <fieldset class="form__content form__content--full-name">
-        <h3 class="form__legend">Представьтесь:</h3>
-        <div class="form__field-wrapper">
-          <label class="form__label" for="name">Имя*:</label>
-          <input class="form__control" type="text" id="name" name="name" value="Пётр" placeholder="Имя" required>
-        </div>
-        <div class="form__field-wrapper">
-          <label class="form__label" for="name">Фамилия*:</label>
-          <input class="form__control" type="text" id="last-name" name="last-name" value="Пустота" placeholder="Фамилия"
-            required>
-        </div>
-        <div class="form__field-wrapper">
-          <label class="form__label" for="name">Отчество:</label>
-          <input class="form__control" type="text" id="patronymic" name="patronymic" value="Викторович"
-            placeholder="Отчество">
-        </div>
-      </fieldset>
-
-      <fieldset class="form__content form__content--contact">
-        <h3 class="form__legend">Контактная информация:</h3>
-        <div class="form__field-wrapper">
-          <label class="form__label" for="phone">Контактный телефон*:</label>
-          <div class="form__input-wrapper">
-            <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
-              required>
-            <span class="form__control-icon form__control-icon--phone"></span>
+      <div class="form__wrapper-contacts">
+        <fieldset class="form__content form__content--full-name">
+          <h3 class="form__legend">Представьтесь:</h3>
+          <div class="form__field-wrapper">
+            <label class="form__label" for="name">Имя*:</label>
+            <input class="form__control" type="text" id="name" name="name" value="Пётр" placeholder="Имя" required>
           </div>
-        </div>
-        <div class="form__field-wrapper">
-          <label class="form__label" for="email">Электронная почта*:</label>
-          <div class="form__input-wrapper">
-            <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
+          <div class="form__field-wrapper">
+            <label class="form__label" for="name">Фамилия*:</label>
+            <input class="form__control" type="text" id="last-name" name="last-name" value="Пустота" placeholder="Фамилия"
               required>
-            <span class="form__control-icon form__control-icon--email"></span>
           </div>
-        </div>
-      </fieldset>
+          <div class="form__field-wrapper">
+            <label class="form__label" for="name">Отчество:</label>
+            <input class="form__control" type="text" id="patronymic" name="patronymic" value="Викторович"
+              placeholder="Отчество">
+          </div>
+        </fieldset>
 
+        <fieldset class="form__content form__content--contact">
+          <h3 class="form__legend">Контактная информация:</h3>
+          <div class="form__field-wrapper">
+            <label class="form__label" for="phone">Контактный телефон*:</label>
+            <div class="form__input-wrapper">
+              <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
+                required>
+              <span class="form__control-icon form__control-icon--phone"></span>
+            </div>
+          </div>
+          <div class="form__field-wrapper">
+            <label class="form__label" for="email">Электронная почта*:</label>
+            <div class="form__input-wrapper">
+              <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
+                required>
+              <span class="form__control-icon form__control-icon--email"></span>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Сделать обертку для блоков ниже и добавить декоротивные полосы для щаголовков -->
       <fieldset class="form__content form__content--impression">
         <h3 class="form__legend">Ваше общее впечатление:</h3>
         <ul class="form__list">
@@ -126,7 +128,7 @@
       </fieldset>
 
       <fieldset class="form__content form__content--place-of-interest">
-        <h3 class="form__legend">Посещенные достопримечательности:</h3>
+        <h3 class="form__legend">Посещенные<br> достопримечательности:</h3>
         <ul class="form__list">
           <li class="form__item">
             <label class="form__checkbox">

@@ -1,6 +1,32 @@
+.form-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: inherit;
+}
+
 .form-intro__header {
-  margin: 0;
-  padding: 36px 19px 28px;
+  min-width: 280px;
+  max-width: 435px;
+  margin: 0 20px;
+  margin-top: 36px;
+  margin-bottom: 28px;
+
+  @media (min-width: @tablet-width) {
+    width: 435px;
+    margin: 0;
+    margin-top: 64px;
+    margin-bottom: 108px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 115px;
+    margin-bottom: 68px;
+  }
 }
 
 .form-intro__title {

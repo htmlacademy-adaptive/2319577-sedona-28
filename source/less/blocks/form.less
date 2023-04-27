@@ -1,41 +1,152 @@
+// Поля
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: @mobile-width-only) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: @tablet-width) {
+    padding: 0 60px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 0 120px;
+  }
+}
+
 // Оформление блоков
 .form__content {
   position: relative;
   margin: 0;
-  width: 320px;
-  padding: 25px 20px 38px;
+  padding: 0;
   border: none;
   box-sizing: border-box;
 
-  // Внутренние отступы для блока с контактными данными
-  &--contact {
-    padding: 25px 20px 34px;
+  // Для мобильной версии
+  @media (max-width: @mobile-width-only) {
+    // Внутренние отступы для блока с ФИО
+    &--full-name {
+      padding-top: 25px;
+      padding-bottom: 38px;
+    }
+
+    // Внутренние отступы для блока с контактными данными
+    &--contact {
+      padding-top: 25px;
+      padding-bottom: 34px;
+    }
+
+    // Внутренние отступы для блока с радио-кнопками
+    &--impression {
+      padding-top: 25px;
+      padding-bottom: 24px;
+    }
+
+    // Внутренние отступы для блока с чекбоксами
+    &--place-of-interest {
+      padding-top: 25px;
+      padding-bottom: 24px;
+    }
+
+    // Внутренние отступы для блока обратной связи
+    &--feedback {
+      padding-top: 24px;
+      padding-bottom: 52px;
+    }
+
+    // Псевдоэлемент-разделитель блоков
+    &::before {
+      position: absolute;
+      content: " ";
+      height: 1px;
+      width: 100%;
+      background-color: #e5e5e5;
+      top: 0;
+      left: 0;
+    }
   }
 
-  // Внутренние отступы для блока с радио-кнопками
-  &--impression {
-    padding: 25px 20px 10px;
+  // Для планшетной версии:
+  @media (min-width: @tablet-width) {
+    // Ширина блоков ввода
+    min-width: 295px;
+
+    // Ширина блока радио-кнопок с нижним отступом
+    &--impression {
+      min-width: 648px;
+      padding: 0;
+      padding-bottom: 48px;
+    }
+
+    // Ширина блока чекбокса с нижним отступом
+    &--place-of-interest {
+      min-width: 648px;
+      padding: 0;
+      padding-bottom: 42px;
+    }
+
+    // Ширина блока ввода отзыва с нижним отступом
+    &--feedback {
+      min-width: 648px;
+      padding: 0;
+      padding-bottom: 48px;
+    }
   }
 
-  // Внутренние отступы для блока с чекбоксами
-  &--place-of-interest {
-    padding: 25px 20px 10px;
-  }
+  // Для десктопной версии:
+  @media (min-width: @desktop-width) {
+    // Ширина блоков ввода
+    min-width: 430px;
 
-  // Внутренние отступы для блока обратной связи
-  &--feedback {
-    padding: 24px 20px 52px;
-  }
+    // Ширина блока радио-кнопок с нижним отступом
+    &--impression {
+      min-width: 960px;
+      padding-bottom: 56px;
+    }
 
-  // Псевдоэлемент-разделитель блоков
-  &::before {
-    position: absolute;
-    content: " ";
-    height: 1px;
+    // Ширина блока чекбокса с нижним отступом
+    &--place-of-interest {
+      min-width: 960px;
+      padding-bottom: 56px;
+    }
+
+    // Ширина блока ввода отзыва с нижним отступом
+    &--feedback {
+      min-width: 960px;
+      padding: 0;
+      padding-bottom: 48px;
+    }
+  }
+}
+
+// Обертка для ФИО и контактов: два блока в два столбца, для планшетной версии и шире
+.form__wrapper-contacts {
+  @media (min-width: @tablet-width) {
     width: 100%;
-    background-color: #e5e5e5;
-    top: 0;
-    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 63px;
+
+    // Декоративная полоса между столбцами
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc(50% - 1px/2);
+      top: calc(50% - 338px/2);
+      width: 1px;
+      min-height: 338px;
+      background-color: #dbdbdb;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 71px;
   }
 }
 
@@ -56,7 +167,7 @@
   }
 }
 
-// Шрифт заголовка поля ввода
+// Отступ заголовка поля ввода
 .form__label {
   padding-left: 16px;
 }
@@ -86,7 +197,17 @@
   // Особая ширина для поля ввода телефона и e-mail
   &--phone,
   &--email {
-    width: 222px;
+    @media (min-width: @mobile-width-only) {
+      width: 222px;
+    }
+
+    @media (min-width: @tablet-width) {
+      width: 237px;
+    }
+
+    @media (min-width: @desktop-width) {
+      width: 372px;
+    }
   }
 }
 
@@ -111,6 +232,7 @@
 
 // Выравнивание списка
 .form__list {
+  margin: 0;
   padding: 0;
   text-align: left;
   list-style: none;
@@ -182,7 +304,7 @@
 .form__feedback {
   margin: 0;
   padding: 16px;
-  width: 279px;
+  min-width: 279px;
   min-height: 150px;
   resize: none;
   border: none;
@@ -196,6 +318,15 @@
 
   &::placeholder {
     opacity: 0.3;
+  }
+
+  @media (min-width: @tablet-width) {
+    min-width: 648px;
+    min-height: 160px;
+  }
+
+  @media (min-width: @desktop-width) {
+    min-width: 768px;
   }
 }
 
