@@ -145,6 +145,10 @@
 
 // Шрифт заголовка формы
 .form__legend {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: @black;
   position: relative;
   display: flex;
   justify-content: center;
@@ -310,7 +314,14 @@
 .form__radio-label,
 .form__checkbox-label {
   text-transform: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
   color: @black;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+  }
 }
 
 // Другой стиль для радио-кнопок и чекбоксов
