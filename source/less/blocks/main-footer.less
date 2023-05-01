@@ -1,26 +1,54 @@
+// Обертка футера (элементы в столбец и содержимое в центре)
 .main-footer__wrapper {
-  background-color: #ffffff;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: @white;
+
+  // При планшетной ширине элементы в строку и с равным расстоянием между др. др.
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 60px;
+  }
+
+  // Отступы от края страницы до содержимого футера при десктоптной ширине чуть больше
+  @media (min-width: @desktop-width) {
+    padding: 0 120px;
+  }
 }
 
+// Отступы для надписи #Visitsedona
 .main-footer__hashtag {
-  padding: 33px 92px 30px;
+  margin-top: 33px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+  }
 }
 
-.main-footer__hashtag-text {
-  margin: 0;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 26px;
-  color: #000000;
-  text-align: center;
-  text-transform: uppercase;
-}
-
+// Отступы для соц. сетей
 .main-footer__social {
-  padding: 0 82px;
+  width: 100%;
+  margin: 30px 0;
+  padding: 0 20px;
+
+  // Добавляет место для доп. иконок соц. сетей
+  @media (min-width: @tablet-width) {
+    max-width: 270px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
+// Отступы для копирайта
 .main-footer__copyright {
-  padding: 30px 95px 33px;
+  margin-bottom: 33px;
+
+  @media (min-width: @tablet-width) {
+    margin: 0;
+  }
 }
