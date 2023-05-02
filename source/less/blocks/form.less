@@ -20,6 +20,7 @@
 // Оформление блоков
 .form__content {
   position: relative;
+  width: 100%;
   margin: 0;
   padding: 0;
   border: none;
@@ -71,26 +72,20 @@
 
   // Для планшетной версии:
   @media (min-width: @tablet-width) {
-    // Ширина блоков ввода
-    min-width: 295px;
-
-    // Ширина блока радио-кнопок с нижним отступом
+    // Блок радио-кнопок с нижним отступом
     &--impression {
-      min-width: 648px;
       padding: 0;
       padding-bottom: 48px;
     }
 
-    // Ширина блока чекбокса с нижним отступом
+    // Блок чекбокса с нижним отступом
     &--place-of-interest {
-      min-width: 648px;
       padding: 0;
       padding-bottom: 42px;
     }
 
-    // Ширина блока ввода отзыва с нижним отступом
+    // Блок ввода отзыва с нижним отступом
     &--feedback {
-      min-width: 648px;
       padding: 0;
       padding-bottom: 48px;
     }
@@ -98,24 +93,18 @@
 
   // Для десктопной версии:
   @media (min-width: @desktop-width) {
-    // Ширина блоков ввода
-    min-width: 430px;
-
-    // Ширина блока радио-кнопок с нижним отступом
+    // Блок радио-кнопок с нижним отступом
     &--impression {
-      min-width: 960px;
       padding-bottom: 56px;
     }
 
-    // Ширина блока чекбокса с нижним отступом
+    // Блок чекбокса с нижним отступом
     &--place-of-interest {
-      min-width: 960px;
       padding-bottom: 56px;
     }
 
-    // Ширина блока ввода отзыва с нижним отступом
+    // Блок ввода отзыва с нижним отступом
     &--feedback {
-      min-width: 960px;
       padding: 0;
       padding-bottom: 48px;
     }
@@ -124,12 +113,15 @@
 
 // Обертка для ФИО и контактов: два блока в два столбца, для планшетной версии и шире
 .form__wrapper-contacts {
+  width: 100%;
+
   @media (min-width: @tablet-width) {
     width: 100%;
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+    gap: 58px;
     padding: 0;
     margin-bottom: 63px;
 
@@ -146,51 +138,46 @@
   }
 
   @media (min-width: @desktop-width) {
+    gap: 100px;
     margin-bottom: 71px;
   }
 }
 
 // Шрифт заголовка формы
 .form__legend {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: @black;
   position: relative;
+  display: flex;
+  justify-content: center;
   margin-bottom: 20px;
 
   @media (min-width: @tablet-width) {
     font-size: 21px;
     margin-bottom: 28px;
-  }
 
-  // Декоративне полосы по обе стороны заголовков форм
-  &--decor-line::before {
-    @media (min-width: @tablet-width) {
+    // Декоративная полоса за заголовком
+    &--decor-line::before {
       content: "";
       position: absolute;
-      min-width: 123px;
+      width: 100%;
       height: 1px;
       left: 0;
       top: 50%;
       background-color: @decor-line;
     }
-
-    @media (min-width: @desktop-width) {
-      min-width: 280px;
-    }
   }
+}
 
-  &--decor-line::after {
-    @media (min-width: @tablet-width) {
-      content: "";
-      position: absolute;
-      min-width: 123px;
-      height: 1px;
-      right: 0;
-      top: 50%;
-      background-color: @decor-line;
-    }
-
-    @media (min-width: @desktop-width) {
-      min-width: 280px;
-    }
+// Обертка для заголовков с декоративной kybtq по обе стороны
+.form__legend-wrapper {
+  @media (min-width: @tablet-width) {
+    width: 400px;
+    text-align: center;
+    background-color: @white;
+    z-index: 1;
   }
 }
 
@@ -209,7 +196,6 @@
   margin-bottom: 16px;
 }
 
-
 // Отступ заголовка поля ввода
 .form__title {
   padding-left: 16px;
@@ -222,6 +208,7 @@
 
 // Форма ввода и шрифт внутри
 .form__control {
+  width: 100%;
   margin: 0;
   padding: 12px 16px;
   background: @input;
@@ -247,40 +234,12 @@
   &::placeholder {
     opacity: 0.3;
   }
-
-  @media (max-width: @mobile-width-only) {
-    width: 280px;
-  }
-
-  @media (min-width: @tablet-width) {
-    width: 295px;
-  }
-
-  @media (min-width: @desktop-width) {
-    width: 430px;
-  }
-
-  // Особая ширина для поля ввода телефона и e-mail
-  &--phone,
-  &--email {
-    @media (max-width: @mobile-width-only) {
-      width: 222px;
-    }
-
-    @media (min-width: @tablet-width) {
-      width: 237px;
-    }
-
-    @media (min-width: @desktop-width) {
-      width: 372px;
-    }
-  }
 }
 
 // Иконки телефона и письма к форме ввода контактов
 .form__control-icon {
   width: 58px;
-  height: 58px;
+  padding: 28px;
   background-color: #e6e6e6;
   background-position: center;
   background-repeat: no-repeat;
@@ -355,7 +314,14 @@
 .form__radio-label,
 .form__checkbox-label {
   text-transform: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
   color: @black;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+  }
 }
 
 // Другой стиль для радио-кнопок и чекбоксов
