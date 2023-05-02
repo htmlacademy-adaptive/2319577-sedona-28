@@ -46,10 +46,15 @@
     <section class="hero">
       <div class="hero__wrapper">
         <h2 class="visually-hidden">Добро пожловать в Седону!</h2>
-        <picture class="hero__picture">
+        <!-- <picture class="hero__picture">
           <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-text-index.svg">
           <source media="(min-width: 768px)" srcset="img/hero/index/tablet-text-index.svg">
           <img class="hero__image" src="img/hero/index/mobile-text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sadona, because the Grand Cnyon sucks!">
+        </picture> -->
+        <picture class="hero__picture">
+          <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-back.jpg 1x, img/hero/index/desktop-back@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/hero/index/tablet-back.jpg 1x, img/hero/index/tablet-back@2x.jpg 2x">
+          <img class="hero__image" src="img/hero/index/mobile-back.jpg" srcset="img/hero/index/mobile-back@2x.jpg 2x" width="320" height="389" alt="Балкон с видом на горы.">
         </picture>
       </div>
     </section>
@@ -61,7 +66,7 @@
           <p class="advantages-intro__title">Седона — небольшой<br>городок в Аризоне, заслуживающий большего!</p>
           <p class="advantages-intro__text">Рассмотрим 5 причин, по которым Седона круче, чем Гранд-Каньон!</p>
         </header>
-        <div class="advantages-intro__zigzag">
+        <div class="advantages-intro__divider">
           <span class="visually-hidden">Декоративный загзаг</span>
         </div>
       </div>

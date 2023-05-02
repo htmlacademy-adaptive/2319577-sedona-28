@@ -62,11 +62,11 @@
       <h2 class="visually-hidden">Фотоматериалы достопримечательностей Седоны</h2>
       <ul class="catalog__list">
         <li class="catalog__item catalog-item catalog-item--main">
-          <a class="catalog-item__link catalog-item__link--main" href="#">
+          <a class="catalog-item__link" href="#">
             <picture class="catalog__picture">
               <source media="(min-width: 1200px)" srcset="img/catalog/desktop-photo-1.jpg 1x, img/catalog/desktop-photo-1@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/catalog/tablet-photo-1.jpg 1x, img/catalog/tablet-photo-1@2x.jpg 2x">
-              <img class="catalog__image" src="img/catalog/mobile-photo-1.jpg" srcset="img/catalog/mobile-photo-1@2x.jpg 2x" width="280" height="280"
+              <img class="catalog__image catalog__image--main" src="img/catalog/mobile-photo-1.jpg" srcset="img/catalog/mobile-photo-1@2x.jpg 2x" width="280" height="280"
               alt="Дорога в закат с силуэтом гор вдали.">
             </picture>
           </a>
@@ -162,8 +162,12 @@
           <h2 class="catalog-video__title">Все еще сомневаетесь?</h2>
           <p class="catalog-video__text">Смотрите видеопрезентацию и<br> скорее за билетами, пока они не подорожали в очередной раз!</p>
         </header>
-        <img src="img/catalog/video-mobile.jpg" width="280" height="177"
-            alt="Видео проезда на транспорте через каньон Мост дьявола к городку Седона">
+        <picture class="catalog-video__picture">
+          <source media="(min-width: 1200px)" srcset="img/catalog/desktop-video.jpg 1x, img/catalog/desktop-video@2x.jpg 2x">
+          <source media="(min-width: 768px)" srcset="img/catalog/tablet-video.jpg 1x, img/catalog/tablet-video@2x.jpg 2x">
+          <img class="catalog-video__image" src="img/catalog/mobile-video.jpg" srcset="img/catalog/mobile-video@2x.jpg 2x" width="280" height="177"
+          alt="Видео проезда на транспорте через каньон Мост дьявола к городку Седона.">
+        </picture>
       </div>
     </section>
   </main>
