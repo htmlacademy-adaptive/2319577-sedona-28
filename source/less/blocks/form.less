@@ -449,7 +449,17 @@
   color: @white;
   background: @darkblue;
   border: none;
+  cursor: pointer;
   margin-bottom: 3px;
+
+  &:hover {
+    background: @hover;
+  }
+
+  &:active {
+    background: @active;
+    color: rgba(255, 255, 255, 0.3);
+  }
 
   @media (min-width: @tablet-width) {
     margin: 0;
