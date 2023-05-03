@@ -44,19 +44,13 @@
     <h1 class="visually-hidden">Седона - главная страница.</h1>
     <!-- Приветвенная картинка с текстом -->
     <section class="hero">
-      <div class="hero__wrapper">
-        <h2 class="visually-hidden">Добро пожловать в Седону!</h2>
-        <!-- <picture class="hero__picture">
-          <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-text-index.svg">
-          <source media="(min-width: 768px)" srcset="img/hero/index/tablet-text-index.svg">
-          <img class="hero__image" src="img/hero/index/mobile-text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sadona, because the Grand Cnyon sucks!">
-        </picture> -->
-        <picture class="hero__picture">
-          <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-back.jpg 1x, img/hero/index/desktop-back@2x.jpg 2x">
-          <source media="(min-width: 768px)" srcset="img/hero/index/tablet-back.jpg 1x, img/hero/index/tablet-back@2x.jpg 2x">
-          <img class="hero__image" src="img/hero/index/mobile-back.jpg" srcset="img/hero/index/mobile-back@2x.jpg 2x" width="320" height="389" alt="Балкон с видом на горы.">
-        </picture>
-      </div>
+      <h2 class="visually-hidden">Добро пожловать в Седону!</h2>
+      <img class="hero__vector" src="img/hero/index/text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sadona, because the Grand Cnyon sucks!">
+      <!-- <picture class="hero__picture">
+        <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-back.jpg 1x, img/hero/index/desktop-back@2x.jpg 2x">
+        <source media="(min-width: 768px)" srcset="img/hero/index/tablet-back.jpg 1x, img/hero/index/tablet-back@2x.jpg 2x">
+        <img class="hero__image" src="img/hero/index/mobile-back.jpg" srcset="img/hero/index/mobile-back@2x.jpg 2x" width="320" height="389" alt="Балкон с видом на горы.">
+      </picture> -->
     </section>
     <!-- Введение -->
     <section class="advantages-intro">
@@ -162,12 +156,12 @@
     <!-- Блок с картой -->
     <section class="map">
       <h2 class="visually-hidden">Место расположения на карте города Седона.</h2>
-      <iframe
+      <iframe class="map__picture"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000688.594123461!2d-113.21346121296004!3d34.556528963151294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1681813298727!5m2!1sru!2sru"
         width="100%"
         height="350"
         allowfullscreen
-        title="Карта города Седона">
+        title="Карта города Седона.">
       </iframe>
     </section>
   </main>

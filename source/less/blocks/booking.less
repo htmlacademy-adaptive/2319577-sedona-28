@@ -63,6 +63,15 @@
   padding: 16px 0;
   background-color: @darkblue;
 
+  &:hover {
+    background: @hover;
+  }
+
+  &:active {
+    background: @active;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
   @media (min-width: @tablet-width) {
     padding: 0;
     padding-top: 14px;
