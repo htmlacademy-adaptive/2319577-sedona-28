@@ -10,8 +10,16 @@
   color: @hover;
 }
 
+.copyright__link:hover .copyright__icon {
+  fill: @hover;
+}
+
 .copyright__link:active .copyright__text {
   color: @logo-active;
+}
+
+.copyright__link:active .copyright__icon {
+  fill: @logo-active;
 }
 
 // Цвет текста "Разработано" и его выравнивание
@@ -25,15 +33,7 @@
 }
 
 // Позиционирование иконок относительно квадратов
-.copyright__icon path {
+.copyright__icon {
   display: block;
   fill: @black;
-
-  &:hover {
-    fill: @hover;
-  }
-
-  &:active {
-    fill: @logo-active;
-  }
 }
