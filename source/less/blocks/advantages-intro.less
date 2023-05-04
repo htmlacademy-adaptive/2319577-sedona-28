@@ -5,17 +5,23 @@
   background-color: inherit;
 }
 
+.advantages-intro__wrapper {
+  width: 100%;
+}
+
 // Отступы у блока приветствия
 .advantages-intro__header {
   min-width: 284px;
   max-width: 520px;
-  margin: 0 18px;
+  padding: 0 18px;
+  margin: 0 auto;
   margin-top: 32px;
   margin-bottom: 16px;
 
   @media (min-width: @tablet-width) {
     width: 520px;
-    margin: 0;
+    padding: 0;
+    margin: 0 auto;
     margin-top: 47px;
     margin-bottom: 55px;
 
@@ -32,25 +38,26 @@
 
 // Шрифт заголовка приветствия
 .advantages-intro__title {
-  margin-bottom: 36px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   color: @black;
+  margin-bottom: 36px;
 
   @media (min-width: @tablet-width) {
     font-size: 21px;
+    margin-bottom: 30px;
   }
 }
 
-// Декоративный элемент после блока
-.advantages-intro__zigzag {
-  display: block;
-  background-image: url("../img/index/advantages-intro__zigzag.svg");
-  background-color: @darkblue;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: auto;
-  max-width: 100%;
-  min-height: 37px;
+// Декоративный элемент после блока только для мобильной версии
+.advantages-intro__divider {
+  @media (max-width: @mobile-width-only) {
+    background-image: url("../img/index/mobile-divider.svg");
+    background-color: @darkblue;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 37px;
+  }
 }

@@ -51,20 +51,26 @@
   }
 }
 
-// Высота первого изображения каталога
-.catalog-item__link--main {
-  @media (min-width: @tablet-width) {
-    height: 400px;
-  }
+.catalog__picture {
+  width: 100%;
 }
 
 // Поведение контентных изображений
-.catalog-item__link img {
+.catalog__image {
+  display: block;
   width: 100%;
-  object-fit: cover;
   max-height: 400px;
+  object-fit: cover;
   background-color: @decor;
 
+  // Первое изображение особенной высоты для планшетной и больше ширины экрана
+  &--main {
+    @media (min-width: @tablet-width) {
+      height: 400px;
+    }
+  }
+
+  // Относительное позиционарование для расположения полосы описания на изображении
   @media (min-width: @desktop-width) {
     position: relative;
   }
@@ -72,12 +78,20 @@
 
 // Шрифт заголовков списка
 .catalog-item__title {
-  margin-top: 15px;
-  margin-bottom: 2px;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
   color: @black;
+  margin-top: 15px;
+  margin-bottom: 2px;
+
+  @media (min-width: @desktop-width) {
+    margin-top: 10px;
+
+    &--main {
+      margin-top: 15px;
+    }
+  }
 }
 
 // Шрифт текста описания
@@ -117,7 +131,12 @@
   @media (min-width: @desktop-width) {
     position: absolute;
     bottom: 0;
+    padding-left: 25px;
     background-color: rgba(0, 0, 0, 0.3);
+
+    &--main {
+      padding: 0 20px;
+    }
 
     * {
       color: @white;

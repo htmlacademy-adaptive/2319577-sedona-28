@@ -9,8 +9,11 @@
   list-style: none;
 }
 
-// Отображение квадратов соц. сетей
-.social__item {
+// Отображение квадратов соц. сетей и относительное позиционирование для вписывания иконок
+.social__link {
+  display: block;
+  position: relative;
+  cursor: pointer;
   background-color: @darkblue;
   min-width: 48px;
   min-height: 48px;
@@ -23,13 +26,6 @@
     background-color: @active;
     opacity: 0.3;
   }
-}
-
-// Относительное позиционирование для ссылок
-.social__link {
-  display: block;
-  position: relative;
-  cursor: pointer;
 }
 
 // Позиционирование иконок относительно квадратов
