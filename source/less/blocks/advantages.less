@@ -15,14 +15,15 @@
 
 // Шрифт заголовков блоков
 .advantages__item-title {
-  margin-bottom: 11px;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
   color: @black;
+  margin-bottom: 11px;
 
   @media (min-width: @tablet-width) {
     font-size: 21px;
+    margin-bottom: 13px;
   }
 }
 
@@ -91,7 +92,7 @@
   @media (min-width: @tablet-width) {
     width: 33.33%;
     min-height: 256px;
-    padding: 52px 33px 31px;
+    padding: 53px 33px 31px;
   }
 
   @media (min-width: @desktop-width) {
@@ -143,7 +144,7 @@
   }
 
   @media (min-width: @tablet-width) {
-    padding: 60px 40px;
+    padding: 60px 40px 62px;
 
     .advantages__item-title {
       padding-top: 98px;
@@ -153,6 +154,10 @@
 
   @media (min-width: @desktop-width) {
     padding: 69px 50px;
+
+    .advantages__item-title {
+      padding-top: 100px;
+    }
 
     br {
       display: block;
@@ -170,11 +175,11 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/house-big.svg");
-      background-position: 50% 24%;
+      background-position: 50% 23%;
     }
 
     @media (min-width: @desktop-width) {
-      background-position: 50% 27%;
+      background-position: 50% 26%;
     }
   }
 
@@ -183,11 +188,16 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/burger-big.svg");
-      background-position: 50% 23%;
+      background-position: 50% 24%;
     }
 
     @media (min-width: @desktop-width) {
+      background-image: url("../img/index/burger-narrow.svg");
       background-position: 50% 27%;
+
+      & .advantages__item-title {
+        padding-top: 94px;
+      }
     }
   }
 
@@ -196,11 +206,20 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/gift-big.svg");
-      background-position: 50% 24%;
+      background-position: 51% 25%;
+
+      & .advantages__item-title {
+        padding-top: 92px;
+      }
     }
 
     @media (min-width: @desktop-width) {
-      background-position: 50% 28%;
+      background-position: 50% 27%;
+      background-image: url("../img/index/gift-wide.svg");
+
+      & .advantages__item-title {
+        padding-top: 101px;
+      }
     }
   }
 }
@@ -246,6 +265,7 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content;
     gap: 0;
   }
 }
@@ -274,7 +294,8 @@
   }
 
   @media (min-width: @tablet-width) {
-    padding: 41px 33px;
+    display: block;
+    padding: 42px 33px;
   }
 
   @media (min-width: @desktop-width) {

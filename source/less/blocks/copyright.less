@@ -16,12 +16,16 @@
 
 // Цвет текста "Разработано" и его выравнивание
 .copyright__text {
-  margin-right: 9px;
+  margin-right: 10px;
   color: @black;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 12px;
+  }
 }
 
 // Позиционирование иконок относительно квадратов
-.copyright__icon {
+.copyright__icon path {
   display: block;
   fill: @black;
 
