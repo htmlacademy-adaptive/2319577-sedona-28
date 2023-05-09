@@ -1,0 +1,170 @@
+// Позиционирование модального окна
+.modal {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+  text-transform: uppercase;
+  text-align: center;
+
+  // Отображение окна с ошибкой заполнения
+  &--wrong {
+    display: none;
+  }
+
+  // Отображение окна с успешным оставлением отзыва
+  &--success {
+    display: none;
+  }
+}
+
+// Модальное окно по центру экрана
+.modal__content {
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: @white;
+
+  // Ширина, высота и внутренние отступы окна с ошибкой ввода
+  &--wrong {
+    padding: 45px 42px 35px;
+    max-width: 320px;
+    min-height: 280px;
+
+    @media (min-width: @tablet-width) {
+      max-width: 400px;
+      min-height: 347px;
+      padding: 50px 47px;
+    }
+  }
+
+  // Ширина, высота и внутренние отступы окна успешного оставления отзыва
+  &--success {
+    padding: 39px 0 0;
+    max-width: 320px;
+    min-height: 323px;
+
+    @media (min-width: @tablet-width) {
+      max-width: 640px;
+      min-height: 347px;
+      padding: 53px 0 0;
+    }
+  }
+}
+
+// Заголовок модального окна
+.modal__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+
+  @media (max-width: @mobile-width-only) {
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: @tablet-width) {
+    max-width: 240px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 22px;
+  }
+
+  &--success {
+    @media (min-width: @tablet-width) {
+      max-width: 444px;
+      font-size: 30px;
+      line-height: 26px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// Описание модального окна
+.modal__description {
+  @media (max-width: @mobile-width-only) {
+    max-width: 237px;
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: @tablet-width) {
+    max-width: 307px;
+    margin-bottom: 48px;
+  }
+
+  &--success {
+    @media (max-width: @mobile-width-only) {
+      max-width: 250px;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: @tablet-width) {
+      max-width: 444px;
+      margin-bottom: 52px;
+    }
+  }
+}
+
+// Фон кнопки окна успешного оставления отзыва
+.modal__button-wrapper {
+  width: 100%;
+  min-height: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @input;
+
+  @media (min-width: @tablet-width) {
+    min-height: 146px;
+  }
+}
+
+// Оформление кнопки
+.modal__button {
+  width: 100%;
+  max-width: 180px;
+  min-height: 58px;
+  display: block;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: @white;
+  background: @darkblue;
+  border: none;
+  cursor: pointer;
+  padding: 18px 64px 14px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 272px;
+    padding: 16px 71px;
+  }
+
+  &:hover {
+    background: @hover;
+  }
+
+  &:active {
+    background: @active;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &--close {
+    max-width: 280px;
+
+    @media (min-width: @tablet-width) {
+      max-width: 458px;
+      font-size: 21px;
+    }
+  }
+}
