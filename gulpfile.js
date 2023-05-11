@@ -1,6 +1,6 @@
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
-import del from 'del';
+import clean from 'del';
 import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
 import less from 'gulp-less';
@@ -13,7 +13,40 @@ import svgstoe from 'gulp-svgstore';
 import terser from 'gulp-terser';
 import csso from 'postcss-csso';
 
-// Styles
+// 1. Clean (очистка папки build перед запуском сборки)
+
+export const clean = () => {
+  return del('build'); //запуск утилиты del для очистки выбранной папки
+};
+
+// 2. Copy (копирование шрифтов, иконок и манифеста)
+
+const copy = (done) => {
+  gulp.src([
+    'source/fonts/*.{woff2,woff}', //копирование шрифтов
+    'source/*.ico', //копирование иконок
+    'source/manifest.webmanifest' //копирование манифеста
+  ], {
+    base: 'source' //базируется в папке source
+  })
+    .pipe(gulp.dest('build')) //переместить все в папку build
+  done();
+}
+
+// 3. Оптимизация и копирование Images
+
+const optimizeImages = () => { //оптимизация картинок
+  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
+    .pipe(squoosh()) //запуск утилиты оптимизации картинок squoosh
+    .pipe(gulp.dest('build/img')) //переместить в папку build/img оптимизированные картинки
+}
+
+const copyImages = () => { //копирование оптимизированных картинок
+  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
+    .pipe(gulp.dest('build/img')) //переместить в папку build/img оптимизированные картинки
+}
+
+// Минификация Styles
 
 export const styles = () => { //name
   return gulp.src('source/less/style.less', { sourcemaps: true }) //1 находит style.less
@@ -28,29 +61,55 @@ export const styles = () => { //name
     .pipe(browser.stream());
 }
 
-// HTML
+// Минификация HTML
 
-export const html = () => {
-  return gulp.src('source/*.html')
+const html = () => {
+  return gulp.src('source/*.html') //выбирает нужные файлы
     .pipe(htmlmin({ collapseWhitespace: true })) //запуск минификатора html
-    .pipe(gulp.dest('build')); //переместить в папку source минифицированные файлы
+    .pipe(gulp.dest('build')); //переместить в папку build минифицированные файлы
 }
 
-// Scripts
-// Images
-// WebP
-// SVG
-// Copy
-// Clean
-// Build
+// Копирование Scripts
 
+const scripts = () => {
+  return gulp.src('source/js/*.js') //выбирает нужные файлы
+    .pipe(terser()) //запуск утилиты terser
+    .pipe(gulp.dest('build/js')); //переместить в папку build/js js-файлы
+}
 
-// Server
+// Оптимизация SVG
+
+const svg = () =>
+  gulp.src(['source/img/*.svg', '!source/img/icons/*.svg']) //в первой папке ищешь, а во второй нет
+    .pipe(svgo()) //запуск оптимизатора svg
+    .pipe(gulp.dest('build/img')); //переместить в папку build/img иконки
+
+const sprite = () => { //делаем спрайты из svg
+  return gulp.src('source/img/icons/*.svg') //берем все иконки в папке source/img/icons
+    .pipe(svgo()) //запуск оптимизатора svg
+    .pipe(svgstore({
+      inlineSvg: true //использование инлайново
+    }))
+    .pipe(rename('sprite.svg')) //переименовывает файлы в один файл sprite.svg
+    .pipe(gulp.dest('build/img'));  //переместить в папку build/img спрайты
+}
+
+// Создание WebP
+
+const createWebp = () => {
+  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
+    .pipe(squoosh({
+      webp: {} //конвертирование выбраных форматов в WebP
+    }))
+    .pipe(gulp.dest('build/img')) //переместить в папку build/img картинки формата WebP
+}
+
+// Server (запуск сервера)
 
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'build' //запуск сервера из папки build
     },
     cors: true,
     notify: false,
@@ -59,14 +118,38 @@ const server = (done) => {
   done();
 }
 
-// Watcher
+// Reload (перезагрузка сервера)
 
-const watcher = () => {
-  gulp.watch('source/less/**/*.less', gulp.series(styles));
-  gulp.watch('source/*.html').on('change', browser.reload);
+const reload = (done) => {
+  browser.reload(); //перезагрузка страницы
+  done();
 }
 
-// Default
+// Watcher (следит за указанными файлами)
+
+const watcher = () => {
+  gulp.watch('source/less/**/*.less', gulp.series(styles)); //найди все файлы .less и запусти задачу styles
+  gulp.watch('source/js/script.js', gulp.series(scripts)); //найди все файлы .js и запусти задачу scripts
+  gulp.watch('source/*.html', gulp.series(html, reload)); //найди все файлы .html и перезапусти страницу
+}
+
+// Build (сздание сборки)
+
+export const build = gulp.series( //1. Запуск последовательных задач
+  clean, //полная очистка папки build
+  copy, //копирование файлов, которые не надо оптимизировать
+  optimizeImages, //оптимизация картинок
+  gulp.parallel( //2. Запуск параллельных задач
+    styles, //минификация и копирование стилей
+    html, //минификация и копирование html
+    scripts, //минификация и копирование js
+    svg, //оптимизация и копирование svg
+    sprite, //оптимизация svg и создание спрайтов в папке build
+    createWebp //преобразование картинок в webp
+  ),
+);
+
+// Default (создание версии для разработки)
 
 export default gulp.series(
   clean,
