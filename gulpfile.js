@@ -9,7 +9,7 @@ import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
 import svgo from 'gulp-svgmin';
-import svgstoe from 'gulp-svgstore';
+import svgstore from 'gulp-svgstore';
 import terser from 'gulp-terser';
 import csso from 'postcss-csso';
 
