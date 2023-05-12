@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/style.min.css" rel="stylesheet">
-  <!-- <link href="css/style.css" rel="stylesheet"> -->
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
@@ -49,11 +48,6 @@
     <section class="hero">
       <h2 class="visually-hidden">Добро пожловать в Седону!</h2>
       <img class="hero__vector" src="img/hero/index/text-index.svg" width="282" height="214" alt="Welcome to the gorgeous Sadona, because the Grand Cnyon sucks!">
-      <!-- <picture class="hero__picture">
-        <source media="(min-width: 1200px)" srcset="img/hero/index/desktop-back.jpg 1x, img/hero/index/desktop-back@2x.jpg 2x">
-        <source media="(min-width: 768px)" srcset="img/hero/index/tablet-back.jpg 1x, img/hero/index/tablet-back@2x.jpg 2x">
-        <img class="hero__image" src="img/hero/index/mobile-back.jpg" srcset="img/hero/index/mobile-back@2x.jpg 2x" width="320" height="389" alt="Балкон с видом на горы.">
-      </picture> -->
     </section>
 
     <!-- Введение -->
@@ -125,6 +119,11 @@
               <p class="advantages__item-text">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
             </div>
             <picture class="advantages__picture">
+              <source type="image/webp" media="(min-width: 1200px)"
+              srcset="img/index/desktop-photo-bridge.webp 1x, img/index/desktop-photo-bridge@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)"
+              srcset="img/index/tablet-photo-bridge.webp 1x, img/index/tablet-photo-bridge@2x.webp 2x">
+              <source type="image/webp" srcset="img/index/mobile-photo-bridge.webp 1x, img/index/mobile-photo-bridge@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/index/desktop-photo-bridge.jpg 1x, img/index/desktop-photo-bridge@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/index/tablet-photo-bridge.jpg 1x, img/index/tablet-photo-bridge@2x.jpg 2x">
               <img class="advantages__image" src="img/index/mobile-photo-bridge.jpg" srcset="img/index/mobile-photo-bridge@2x.jpg 2x" width="320" height="256" alt="Мост дьявола.">

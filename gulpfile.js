@@ -1,7 +1,6 @@
+import gulp from 'gulp';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
-import clean from 'del';
-import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
 import less from 'gulp-less';
 import squoosh from 'gulp-libsquoosh';
@@ -12,10 +11,14 @@ import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import terser from 'gulp-terser';
 import csso from 'postcss-csso';
+import del from 'del';
+
+// npm i -D НАЗВАНИЕ  -установка
+// npm uninstall -D НАЗВАНИЕ  -удаление
 
 // 1. Clean (очистка папки build перед запуском сборки)
 
-export const clean = () => {
+const clean = () => {
   return del('build'); //запуск утилиты del для очистки выбранной папки
 };
 
@@ -80,11 +83,11 @@ const scripts = () => {
 // Оптимизация SVG
 
 const svg = () =>
-  gulp.src(['source/img/*.svg', '!source/img/icons/*.svg']) //в первой папке ищешь, а во второй нет
+  gulp.src(['source/img/**/*.svg', '!source/img/icons/*.svg']) //в первой папке ищешь, а во второй нет
     .pipe(svgo()) //запуск оптимизатора svg
     .pipe(gulp.dest('build/img')); //переместить в папку build/img иконки
 
-const sprite = () => { //делаем спрайты из svg
+export const sprite = () => { //делаем спрайты из svg
   return gulp.src('source/img/icons/*.svg') //берем все иконки в папке source/img/icons
     .pipe(svgo()) //запуск оптимизатора svg
     .pipe(svgstore({
