@@ -1,7 +1,6 @@
+import gulp from 'gulp';
 import autoprefixer from 'autoprefixer';
 import browser from 'browser-sync';
-import clean from 'del';
-import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
 import less from 'gulp-less';
 import squoosh from 'gulp-libsquoosh';
@@ -9,13 +8,17 @@ import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
 import svgo from 'gulp-svgmin';
-import svgstoe from 'gulp-svgstore';
+import svgstore from 'gulp-svgstore';
 import terser from 'gulp-terser';
 import csso from 'postcss-csso';
+import del from 'del';
+
+// npm i -D НАЗВАНИЕ@ВЕРСИЯ   -установка
+// npm uninstall -D НАЗВАНИЕ  -удаление
 
 // 1. Clean (очистка папки build перед запуском сборки)
 
-export const clean = () => {
+const clean = () => {
   return del('build'); //запуск утилиты del для очистки выбранной папки
 };
 
@@ -44,6 +47,33 @@ const optimizeImages = () => { //оптимизация картинок
 const copyImages = () => { //копирование оптимизированных картинок
   return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
     .pipe(gulp.dest('build/img')) //переместить в папку build/img оптимизированные картинки
+}
+
+// Оптимизация SVG
+
+const svg = () =>
+  gulp.src(['source/img/**/*.svg', '!source/img/icons/*.svg']) //в первой папке ищешь, а во второй нет
+    .pipe(svgo()) //запуск оптимизатора svg
+    .pipe(gulp.dest('build/img')); //переместить в папку build/img иконки
+
+export const sprite = () => { //делаем спрайты из svg
+  return gulp.src('source/img/icons/*.svg') //берем все иконки в папке source/img/icons
+    .pipe(svgo()) //запуск оптимизатора svg
+    .pipe(svgstore({
+      inlineSvg: true //использование инлайново
+    }))
+    .pipe(rename('sprite.svg')) //переименовывает файлы в один файл sprite.svg
+    .pipe(gulp.dest('build/img'));  //переместить в папку build/img спрайты
+}
+
+// Создание WebP
+
+const createWebp = () => {
+  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
+    .pipe(squoosh({
+      webp: {} //конвертирование выбраных форматов в WebP
+    }))
+    .pipe(gulp.dest('build/img')) //переместить в папку build/img картинки формата WebP
 }
 
 // Минификация Styles
@@ -75,33 +105,6 @@ const scripts = () => {
   return gulp.src('source/js/*.js') //выбирает нужные файлы
     .pipe(terser()) //запуск утилиты terser
     .pipe(gulp.dest('build/js')); //переместить в папку build/js js-файлы
-}
-
-// Оптимизация SVG
-
-const svg = () =>
-  gulp.src(['source/img/*.svg', '!source/img/icons/*.svg']) //в первой папке ищешь, а во второй нет
-    .pipe(svgo()) //запуск оптимизатора svg
-    .pipe(gulp.dest('build/img')); //переместить в папку build/img иконки
-
-const sprite = () => { //делаем спрайты из svg
-  return gulp.src('source/img/icons/*.svg') //берем все иконки в папке source/img/icons
-    .pipe(svgo()) //запуск оптимизатора svg
-    .pipe(svgstore({
-      inlineSvg: true //использование инлайново
-    }))
-    .pipe(rename('sprite.svg')) //переименовывает файлы в один файл sprite.svg
-    .pipe(gulp.dest('build/img'));  //переместить в папку build/img спрайты
-}
-
-// Создание WebP
-
-const createWebp = () => {
-  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
-    .pipe(squoosh({
-      webp: {} //конвертирование выбраных форматов в WebP
-    }))
-    .pipe(gulp.dest('build/img')) //переместить в папку build/img картинки формата WebP
 }
 
 // Server (запуск сервера)
