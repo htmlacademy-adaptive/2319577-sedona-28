@@ -45,7 +45,7 @@ const optimizeImages = () => { //оптимизация картинок
 }
 
 const copyImages = () => { //копирование оптимизированных картинок
-  return gulp.src('source/img/**/*.{jpg,png}') //выбирает нужные файлы
+  return gulp.src('source/img/**/*.{jpg,png,svg}') //выбирает нужные файлы
     .pipe(gulp.dest('build/img')) //переместить в папку build/img оптимизированные картинки
 }
 
@@ -121,13 +121,6 @@ const server = (done) => {
   done();
 }
 
-// Reload (перезагрузка сервера)
-
-const reload = (done) => {
-  browser.reload(); //перезагрузка страницы
-  done();
-}
-
 // Watcher (следит за указанными файлами)
 
 const watcher = () => {
@@ -136,17 +129,24 @@ const watcher = () => {
   gulp.watch('source/*.html', gulp.series(html, reload)); //найди все файлы .html и перезапусти страницу
 }
 
+// Reload (перезагрузка сервера)
+
+const reload = (done) => {
+  browser.reload(); //перезагрузка страницы
+  done();
+}
+
 // Build (сздание сборки)
 
 export const build = gulp.series( //1. Запуск последовательных задач
   clean, //полная очистка папки build
   copy, //копирование файлов, которые не надо оптимизировать
   optimizeImages, //оптимизация картинок
+  svg, //оптимизация и копирование svg
   gulp.parallel( //2. Запуск параллельных задач
     styles, //минификация и копирование стилей
     html, //минификация и копирование html
     scripts, //минификация и копирование js
-    svg, //оптимизация и копирование svg
     sprite, //оптимизация svg и создание спрайтов в папке build
     createWebp //преобразование картинок в webp
   ),
@@ -163,10 +163,10 @@ export default gulp.series(
     html,
     scripts,
     svg,
-    sprite,
     createWebp
   ),
   gulp.series(
+    sprite,
     server,
     watcher
   )
