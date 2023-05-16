@@ -12,12 +12,12 @@
   text-align: center;
 
   // Отображение окна с ошибкой заполнения
-  &--wrong {
-    display: block;
+  &--opened {
+    display: none;
   }
 
   // Отображение окна с успешным оставлением отзыва
-  &--success {
+  &--closed {
     display: none;
   }
 }
@@ -46,6 +46,10 @@
       min-height: 347px;
       padding: 50px 47px;
     }
+
+    @media (min-width: @desktop-width) {
+      padding: 48px 47px;
+    }
   }
 
   // Ширина, высота и внутренние отступы окна успешного оставления отзыва
@@ -64,10 +68,25 @@
     @media (min-width: @tablet-width) {
       max-width: 640px;
       min-height: 347px;
-      padding: 50px 0 0;
+      padding: 46px 0 0;
 
       .modal__title {
-        max-width: 400px;
+        max-width: 430px;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 22px;
+      }
+
+      .modal__description {
+        max-width: 444px;
+        margin-bottom: 52px;
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      padding: 49px 0 0;
+
+      .modal__title {
         font-size: 30px;
         line-height: 26px;
         margin-bottom: 34px;
@@ -96,6 +115,10 @@
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 22px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 25px;
   }
 }
 

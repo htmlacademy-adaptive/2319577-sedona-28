@@ -158,15 +158,15 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
+  svg,
   gulp.parallel(
     styles,
     html,
     scripts,
-    svg,
+    sprite,
     createWebp
   ),
   gulp.series(
-    sprite,
     server,
     watcher
   )
