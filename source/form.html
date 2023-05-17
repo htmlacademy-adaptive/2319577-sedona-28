@@ -9,12 +9,6 @@
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
   <link rel="manifest" href="manifest.webmanifest">
-
-  <link  rel="preload" href="css/style.min.css" as="style">
-  <link  rel="preload" href="js/script.js" as="script">
-  <link  rel="preload" href="fonts/ptsans.woff2" as="font" crossorigin="anonymous">
-  <link  rel="preload" href="fonts/ptsansbold.woff2" as="font" crossorigin="anonymous">
-
   <title>HTML Academy: Седона</title>
 </head>
 
@@ -81,13 +75,13 @@
             </li>
             <li class="form__field-item">
               <p class="form__title">Фамилия*:</p>
-              <label class="form__label" for="name">
+              <label class="form__label" for="last-name">
                 <input class="form__control" type="text" id="last-name" name="last-name" value="Пустота" placeholder="Фамилия" required>
               </label>
             </li>
             <li class="form__field-item">
               <p class="form__title">Отчество:</p>
-              <label class="form__label" for="name">
+              <label class="form__label" for="patronymic">
                 <input class="form__control" type="text" id="patronymic" name="patronymic" value="Викторович" placeholder="Отчество">
               </label>
             </li>
@@ -100,22 +94,18 @@
           <ul class="form__field-wrapper">
             <li class="form__field-item">
               <p class="form__title">Контактный телефон*:</p>
-              <label class="form__label" for="phone">
-                <div class="form__input-wrapper">
-                  <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
-                    required>
-                  <span class="form__control-icon form__control-icon--phone"></span>
-                </div>
+              <label class="form__label form__label--row" for="phone">
+                <input class="form__control form__control--phone" type="tel" id="phone" name="phone" value="" placeholder="Введите телефон"
+                  required>
+                <span class="form__control-icon form__control-icon--phone"></span>
               </label>
             </li>
             <li class="form__field-item">
               <p class="form__title">Электронная почта*:</p>
-              <label class="form__label" for="email">
-                <div class="form__input-wrapper">
-                  <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
-                    required>
-                  <span class="form__control-icon form__control-icon--email"></span>
-                </div>
+              <label class="form__label form__label--row" for="email">
+                <input class="form__control form__control--email" type="email" id="email" name="email" value="" placeholder="Введите e-mail"
+                  required>
+                <span class="form__control-icon form__control-icon--email"></span>
               </label>
             </li>
           </ul>
@@ -263,7 +253,7 @@
   </footer>
 
   <!-- Модальное кно ошибки -->
-  <div class="modal modal--opened modal--wrong">
+  <div class="modal modal--wrong">
     <section class="modal__content modal__content--wrong">
       <h3 class="modal__title">Что-то пошло не так!</h3>
       <p class="modal__description">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
@@ -272,7 +262,7 @@
   </div>
 
   <!-- Модальное окно подтверждения -->
-  <div class="modal modal--closed modal--success">
+  <div class="modal modal--success">
     <section class="modal__content modal__content--success">
       <h3 class="modal__title">Ваш отзыв отправлен!</h3>
       <p class="modal__description">Спасибо за ваше участие, ваш отзыв уже поступил к нам.<br> В ближайшее время мы опубликуем его на сайте.</p>
