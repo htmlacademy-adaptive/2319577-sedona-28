@@ -104,14 +104,14 @@
 .catalog-item__like-count {
   margin: 0;
   padding-top: 5px;
-  padding-left: 14px;
+  padding-left: 5px;
   font-weight: 700;
   color: @black;
   text-transform: uppercase;
 
   @media (min-width: @tablet-width) {
+    padding: 0;
     padding-top: 4px;
-    padding-left: 9px;
   }
 }
 
@@ -169,4 +169,12 @@
 
 .catalog-item__like:active svg {
   fill: @logo-active;
+}
+
+.catalog-item__like__button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  padding-right: 9px;
+  cursor: pointer;
 }

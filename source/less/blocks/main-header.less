@@ -1,14 +1,24 @@
 .main-header {
   position: relative;
-  display: flex;
   width: 100%;
 }
 
 // Главный логотип
 .main-header__logo-image {
   z-index: 1;
+  margin: 0 auto;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%);
+}
+
+.main-header--nojs .main-header__logo-image {
+  position: static;
+  transform: none;
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    transform: translate(-50%);
+  }
 }

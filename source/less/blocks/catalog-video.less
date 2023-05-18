@@ -15,6 +15,10 @@
   }
 }
 
+.catalog-video__wrapper {
+  width: 100%;
+}
+
 //Внутренние отступы для блока и псевдоэлемент-разделитель блоков
 .catalog-video__header {
   @media (max-width: @mobile-width-only) {
@@ -52,8 +56,18 @@
   }
 }
 
-.catalog-video__wrapper {
-  width: 100%;
+// Шрифт заголовка блока
+.catalog-video__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: @black;
+  margin-bottom: 28px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
 }
 
 // Изображение видеоплеера в середине
@@ -73,16 +87,34 @@
   }
 }
 
-// Шрифт заголовка блока
-.catalog-video__title {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
-  color: @black;
-  margin-bottom: 28px;
+.catalog-video__button-play {
+  position: absolute;
+  right: 116px;
+  bottom: 55px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 
   @media (min-width: @tablet-width) {
-    font-size: 30px;
-    margin-bottom: 32px;
+    right: 300px;
+    bottom: 262px;
   }
+
+  @media (min-width: @desktop-width) {
+    right: 377px;
+    bottom: 305px;
+  }
+
+  svg {
+    fill: @white;
+  }
+}
+
+.catalog-video__button-play:hover svg {
+  fill: @hover;
+}
+
+.catalog-video__button-play:active svg {
+  fill: @logo-active;
 }

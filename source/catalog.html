@@ -9,11 +9,17 @@
   <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/favicons/apple.png">
   <link rel="manifest" href="manifest.webmanifest">
+
+  <link  rel="preload" href="css/style.min.css" as="style">
+  <link  rel="preload" href="js/script.js" as="script">
+  <link  rel="preload" href="fonts/ptsans.woff2" as="font" crossorigin="anonymous">
+  <link  rel="preload" href="fonts/ptsansbold.woff2" as="font" crossorigin="anonymous">
+
   <title>HTML Academy: Седона</title>
 </head>
 
 <body class="page__body">
-  <header class="main-header">
+  <header class="main-header main-header--nojs">
     <!-- Логотип -->
     <a class="main-header__logo" href="index.html">
       <img class="main-header__logo-image" src="img/logo-sedona.svg" width="185" height="96" alt="Город «Седона».">
@@ -74,7 +80,7 @@
               <source type="image/webp" srcset="img/catalog/mobile-photo-1.webp 1x, img/catalog/mobile-photo-1@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/catalog/desktop-photo-1.jpg 1x, img/catalog/desktop-photo-1@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/catalog/tablet-photo-1.jpg 1x, img/catalog/tablet-photo-1@2x.jpg 2x">
-              <img class="catalog__image catalog__image--main" src="img/catalog/mobile-photo-1.jpg" srcset="img/catalog/mobile-photo-1@2x.jpg 2x" width="280" height="280"
+              <img class="catalog__image catalog__image--main" loading="lazy" src="img/catalog/mobile-photo-1.jpg" srcset="img/catalog/mobile-photo-1@2x.jpg 2x" width="280" height="280"
               alt="Дорога в закат с силуэтом гор вдали.">
             </picture>
           </a>
@@ -84,10 +90,12 @@
               <p class="catalog-item__text">Автор фото: Борис</p>
             </div>
             <div class="catalog-item__like">
-              <span class="visually-hidden">Понравилось</span>
-              <svg class="catalog-item__like-icon" width="23" height="21">
-                <use xlink:href="img/sprite.svg#like"></use>
-              </svg>
+              <button class="catalog-item__like__button" type="button">
+                <span class="visually-hidden">Понравилось</span>
+                <svg class="catalog-item__like-icon" width="23" height="21">
+                  <use xlink:href="img/sprite.svg#like"></use>
+                </svg>
+              </button>
               <span class="catalog-item__like-count">1350</span>
             </div>
           </div>
@@ -104,7 +112,7 @@
               <source type="image/webp" srcset="img/catalog/mobile-photo-2.webp 1x, img/catalog/mobile-photo-2@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/catalog/desktop-photo-2.jpg 1x, img/catalog/desktop-photo-2@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/catalog/tablet-photo-2.jpg 1x, img/catalog/tablet-photo-2@2x.jpg 2x">
-              <img class="catalog__image" src="img/catalog/mobile-photo-2.jpg" srcset="img/catalog/mobile-photo-2@2x.jpg 2x" width="280" height="280"
+              <img class="catalog__image" loading="lazy" src="img/catalog/mobile-photo-2.jpg" srcset="img/catalog/mobile-photo-2@2x.jpg 2x" width="280" height="280"
               alt="Растение на фоне каньона.">
             </picture>
           </a>
@@ -113,11 +121,13 @@
               <h3 class="catalog-item__title">Местная растительность</h3>
               <p class="catalog-item__text">Автор фото: Сергей</p>
             </div>
-            <div class="catalog-item__like" type="button">
-              <span class="visually-hidden">Понравилось</span>
-              <svg class="catalog-item__like-icon" width="23" height="21">
-                <use xlink:href="img/sprite.svg#like"></use>
-              </svg>
+            <div class="catalog-item__like">
+              <button class="catalog-item__like__button" type="button">
+                <span class="visually-hidden">Понравилось</span>
+                <svg class="catalog-item__like-icon" width="23" height="21">
+                  <use xlink:href="img/sprite.svg#like"></use>
+                </svg>
+              </button>
               <span class="catalog-item__like-count">143</span>
             </div>
           </div>
@@ -134,7 +144,7 @@
               <source type="image/webp" srcset="img/catalog/mobile-photo-3.webp 1x, img/catalog/mobile-photo-3@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/catalog/desktop-photo-3.jpg 1x, img/catalog/desktop-photo-3@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/catalog/tablet-photo-3.jpg 1x, img/catalog/tablet-photo-3@2x.jpg 2x">
-              <img class="catalog__image" src="img/catalog/mobile-photo-3.jpg" srcset="img/catalog/mobile-photo-3@2x.jpg 2x" width="280" height="280"
+              <img class="catalog__image" loading="lazy" src="img/catalog/mobile-photo-3.jpg" srcset="img/catalog/mobile-photo-3@2x.jpg 2x" width="280" height="280"
               alt="Горный серпантин в окружении хвойных деревьев.">
             </picture>
           </a>
@@ -143,11 +153,13 @@
               <h3 class="catalog-item__title">Дорога на север</h3>
               <p class="catalog-item__text">Автор фото: Петр</p>
             </div>
-            <div class="catalog-item__like" type="button">
-              <span class="visually-hidden">Понравилось</span>
-              <svg class="catalog-item__like-icon" width="23" height="21">
-                <use xlink:href="img/sprite.svg#like"></use>
-              </svg>
+            <div class="catalog-item__like">
+              <button class="catalog-item__like__button" type="button">
+                <span class="visually-hidden">Понравилось</span>
+                <svg class="catalog-item__like-icon" width="23" height="21">
+                  <use xlink:href="img/sprite.svg#like"></use>
+                </svg>
+              </button>
               <span class="catalog-item__like-count">96</span>
             </div>
           </div>
@@ -164,7 +176,7 @@
               <source type="image/webp" srcset="img/catalog/mobile-photo-4.webp 1x, img/catalog/mobile-photo-4@2x.webp 2x">
               <source media="(min-width: 1200px)" srcset="img/catalog/desktop-photo-4.jpg 1x, img/catalog/desktop-photo-4@2x.jpg 2x">
               <source media="(min-width: 768px)" srcset="img/catalog/tablet-photo-4.jpg 1x, img/catalog/tablet-photo-4@2x.jpg 2x">
-              <img class="catalog__image" src="img/catalog/mobile-photo-4.jpg" srcset="img/catalog/mobile-photo-4@2x.jpg 2x" width="280" height="280"
+              <img class="catalog__image" loading="lazy" src="img/catalog/mobile-photo-4.jpg" srcset="img/catalog/mobile-photo-4@2x.jpg 2x" width="280" height="280"
               alt="Каньон на фоне гор.">
             </picture>
           </a>
@@ -173,11 +185,13 @@
               <h3 class="catalog-item__title">Мост дьявола</h3>
               <p class="catalog-item__text">Автор фото: Антон</p>
             </div>
-            <div class="catalog-item__like" type="button">
-              <span class="visually-hidden">Понравилось</span>
-              <svg class="catalog-item__like-icon" width="23" height="21">
-                <use xlink:href="img/sprite.svg#like"></use>
-              </svg>
+            <div class="catalog-item__like">
+              <button class="catalog-item__like__button" type="button">
+                <span class="visually-hidden">Понравилось</span>
+                <svg class="catalog-item__like-icon" width="23" height="21">
+                  <use xlink:href="img/sprite.svg#like"></use>
+                </svg>
+              </button>
               <span class="catalog-item__like-count">254</span>
             </div>
           </div>
@@ -192,17 +206,25 @@
           <h2 class="catalog-video__title">Все еще сомневаетесь?</h2>
           <p class="catalog-video__text">Смотрите видеопрезентацию и<br> скорее за билетами, пока они не подорожали в очередной раз!</p>
         </header>
-        <picture class="catalog-video__picture">
-          <source type="image/webp" media="(min-width: 1200px)"
-          srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
-          <source type="image/webp" media="(min-width: 768px)"
-          srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
-          <source type="image/webp" srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
-          <source media="(min-width: 1200px)" srcset="img/catalog/desktop-video.jpg 1x, img/catalog/desktop-video@2x.jpg 2x">
-          <source media="(min-width: 768px)" srcset="img/catalog/tablet-video.jpg 1x, img/catalog/tablet-video@2x.jpg 2x">
-          <img class="catalog-video__image" src="img/catalog/mobile-video.jpg" srcset="img/catalog/mobile-video@2x.jpg 2x" width="280" height="177"
-          alt="Видео проезда на транспорте через каньон Мост дьявола к городку Седона.">
-        </picture>
+        <a class="catalog-video__presentation" href="#">
+          <picture class="catalog-video__picture">
+            <source type="image/webp" media="(min-width: 1200px)"
+            srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)"
+            srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
+            <source type="image/webp" srcset="img/catalog/desktop-video.webp 1x, img/catalog/desktop-video@2x.webp 2x">
+            <source media="(min-width: 1200px)" srcset="img/catalog/desktop-video.jpg 1x, img/catalog/desktop-video@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/catalog/tablet-video.jpg 1x, img/catalog/tablet-video@2x.jpg 2x">
+            <img class="catalog-video__image" src="img/catalog/mobile-video.jpg" srcset="img/catalog/mobile-video@2x.jpg 2x" width="280" height="177"
+            alt="Видео проезда на транспорте через каньон Мост дьявола к городку Седона.">
+          </picture>
+        </a>
+        <button class="catalog-video__button-play" type="button">
+          <span class="visually-hidden">Запуск воспроизведения</span>
+          <svg class="catalog-video__button-play-icon" width="48" height="54">
+            <use xlink:href="img/sprite.svg#button-play"></use>
+          </svg>
+        </button>
       </div>
     </section>
   </main>

@@ -202,7 +202,7 @@
 }
 
 // Форма ввода контактов и иконка друг за другом
-.form__input-wrapper {
+.form__label--row {
   display: flex;
 }
 
@@ -342,6 +342,12 @@
     opacity: 0.3;
     background-color: #d5d5d5;
   }
+}
+
+// Фокусное выделение новых радио-кнопок и чекбоксов
+.form__control-input:focus + .form__radio-mark,
+.form__control-input:focus + .form__checkbox-mark {
+  outline: 2px solid @black;
 }
 
 // Кружок внутри радио-кнопок
