@@ -130,9 +130,9 @@
       content: " ";
       position: absolute;
       left: calc(50% - 1px / 2);
-      top: calc(50% - 338px / 2);
+      top: calc(50% - [height]/ 2);
       width: 1px;
-      min-height: 338px;
+      height: 100%;
       background-color: @decor-line;
     }
   }
@@ -314,6 +314,8 @@
 // Шрифт наименований радио-кнопок и чекбокса
 .form__radio-label,
 .form__checkbox-label {
+  display: flex;
+  flex-wrap: wrap;
   text-transform: none;
   font-weight: 700;
   font-size: 18px;
@@ -426,6 +428,7 @@
 // Отображение кнопки "Оставить отзыв" и текста под ней
 .form__submit-wrapper {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   // padding: 0 20px;
   margin-bottom: 22px;
@@ -486,6 +489,7 @@
 
   @media (min-width: @tablet-width) {
     padding-top: 6px;
+    padding-left: 20px;
     font-size: 14px;
   }
 }
