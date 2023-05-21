@@ -125,7 +125,7 @@ const server = (done) => {
 
 const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles)); //найди все файлы .less и запусти задачу styles
-  gulp.watch('source/js/script.js', gulp.series(scripts)); //найди все файлы .js и запусти задачу scripts
+  gulp.watch('source/js/script.js', gulp.series(scripts, reload)); //найди все файлы .js и запусти задачу scripts
   gulp.watch('source/*.html', gulp.series(html, reload)); //найди все файлы .html и перезапусти страницу
 }
 

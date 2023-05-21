@@ -1,35 +1,32 @@
 .map {
-  // position: relative;
-  // display: flex;
-  // justify-content: center;
   background-color: @background;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 350px;
-  margin-bottom: 8px;
 
   @media (max-width: @mobile-width-only) {
-    background-image: url("../img/hero/index/mobile-map.jpg");
+    margin-bottom: 8px;
+    background-image: url("../img/index/mobile-map.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/hero/index/mobile-map@2x.jpg");
+      background-image: url("../img/index/mobile-map@2x.jpg");
     }
   }
 
   @media (min-width: @tablet-width) {
-    background-image: url("../img/hero/index/tablet-map.jpg");
+    background-image: url("../img/index/tablet-map.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/hero/index/tablet-map@2x.jpg");
+      background-image: url("../img/index/tablet-map@2x.jpg");
     }
   }
 
   @media (min-width: @desktop-width) {
-    background-image: url("../img/hero/index/desktop-map.jpg");
+    background-image: url("../img/index/desktop-map.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/hero/index/desktop-map@2x.jpg");
+      background-image: url("../img/index/desktop-map@2x.jpg");
     }
   }
 }

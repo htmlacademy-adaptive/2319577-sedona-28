@@ -47,7 +47,6 @@
   @media (min-width: @tablet-width) {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
 }
 
@@ -60,7 +59,6 @@
 }
 
 .advantages__image {
-  display: block;
   width: 100%;
   height: 260px;
   object-fit: cover;
@@ -175,11 +173,12 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/house-big.svg");
-      background-position: 50% 23%;
+      background-size: 78px 72px;
+      background-position: center top 60px;
     }
 
     @media (min-width: @desktop-width) {
-      background-position: 50% 26%;
+      background-position: center top 67px;
     }
   }
 
@@ -188,12 +187,14 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/burger-big.svg");
-      background-position: 50% 24%;
+      background-size: 82px 68px;
+      background-position: center top 62px;
     }
 
     @media (min-width: @desktop-width) {
       background-image: url("../img/index/burger-narrow.svg");
-      background-position: 50% 27%;
+      background-size: 74px 69px;
+      background-position: center top 68px;
 
       & .advantages__item-title {
         padding-top: 94px;
@@ -206,7 +207,8 @@
 
     @media (min-width: @tablet-width) {
       background-image: url("../img/index/gift-big.svg");
-      background-position: 51% 25%;
+      background-size: 67px 75px;
+      background-position: center top 61px;
 
       & .advantages__item-title {
         padding-top: 92px;
@@ -214,8 +216,9 @@
     }
 
     @media (min-width: @desktop-width) {
-      background-position: 50% 27%;
       background-image: url("../img/index/gift-wide.svg");
+      background-size: 78px 76px;
+      background-position: center top 68px;
 
       & .advantages__item-title {
         padding-top: 101px;
