@@ -290,16 +290,18 @@
     &--radio {
       padding-top: 16px;
       padding-left: 42px;
-      grid-template-columns: 280px 280px 280px;
+      grid-template-columns: repeat(3, 280px);
       grid-template-rows: min-content;
-      gap: 28px;
+      column-gap: 28px;
+      row-gap: 30px;
     }
 
     &--checkbox {
       padding-top: 31px;
-      grid-template-columns: repeat(4, max-content);
+      grid-template-columns: repeat(4, 190px);
       grid-template-rows: min-content;
-      gap: 64px;
+      column-gap: 64px;
+      row-gap: 30px;
     }
   }
 }
